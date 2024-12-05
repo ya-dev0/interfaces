@@ -1,3 +1,4 @@
+// pages/index.tsx
 import React, { useState } from 'react';
 import BurgerMenu from '../components/BurgerMenu';
 import Composition, { FigureData } from '../components/Composition';
@@ -15,7 +16,7 @@ const IndexPage: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <BurgerMenu currentTab={currentTab} onTabChange={handleTabChange} />
+      <BurgerMenu onTabChange={handleTabChange} />
 
       {currentTab === 'practice1' && <Practice1 />}
       {currentTab === 'practice2' && <Practice2 />}
@@ -102,8 +103,7 @@ const Practice2: React.FC = () => {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: colorPalette.secondary }}>
-      <BurgerMenu currentTab="practice2" onTabChange={() => {}} />
-
+      {/* Header */}
       <header
         className="h-72 flex items-center justify-center"
         style={{
@@ -118,11 +118,14 @@ const Practice2: React.FC = () => {
         </h2>
       </header>
 
+      {/* Main content */}
       <main className="p-8">
+        {/* Bestsellers Section */}
         <section className="mb-16">
           <h3 className="text-3xl font-semibold mb-8 text-center">Наши бестселлеры</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="border p-6 flex flex-col items-center">
+            {/* Book Cards */}
+            <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
               <img
                 src="/images/book1.jpg"
                 alt="Tell Me Your Life Story, Dad"
@@ -130,8 +133,9 @@ const Practice2: React.FC = () => {
               />
               <h4 className="text-xl font-bold text-center">Tell Me Your Life Story, Dad</h4>
               <p className="text-gray-600 text-center">Автор: Questions About Me</p>
+              <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Купить</button>
             </div>
-            <div className="border p-6 flex flex-col items-center">
+            <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
               <img
                 src="/images/book2.jpg"
                 alt="Trump: The Art of the Deal"
@@ -139,8 +143,9 @@ const Practice2: React.FC = () => {
               />
               <h4 className="text-xl font-bold text-center">Trump: The Art of the Deal</h4>
               <p className="text-gray-600 text-center">Автор: Donald J. Trump</p>
+              <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Купить</button>
             </div>
-            <div className="border p-6 flex flex-col items-center">
+            <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
               <img
                 src="/images/book3.jpg"
                 alt="Maybe You Should Talk to Someone"
@@ -148,34 +153,52 @@ const Practice2: React.FC = () => {
               />
               <h4 className="text-xl font-bold text-center">Maybe You Should Talk to Someone</h4>
               <p className="text-gray-600 text-center">Автор: Lori Gottlieb</p>
+              <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Купить</button>
             </div>
           </div>
         </section>
 
+        {/* Why Choose Us Section */}
         <section className="bg-gray-100 p-8 mb-16">
           <h3 className="text-3xl font-semibold mb-8 text-center">Почему выбирают нас</h3>
-          <div className="flex flex-col md:flex-row items-center justify-around">
-            <div className="flex flex-col items-center mb-8 md:mb-0">
-              <div className="w-16 h-16 mb-4">
-                {/* Здесь можно добавить иконку или изображение */}
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-col items-center">
+              <img
+                src="/images/icons/assortment.png"
+                alt="Большой ассортимент"
+                className="w-16 h-16 mb-4"
+              />
               <p className="text-xl font-semibold text-center">Большой ассортимент книг</p>
-            </div>
-            <div className="flex flex-col items-center mb-8 md:mb-0">
-              <div className="w-16 h-16 mb-4">
-                {/* Здесь можно добавить иконку или изображение */}
-              </div>
-              <p className="text-xl font-semibold text-center">Быстрая доставка</p>
+              <p className="text-gray-600 text-center mt-2">
+                У нас вы найдете книги на любой вкус и предпочтения.
+              </p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 mb-4">
-                {/* Здесь можно добавить иконку или изображение */}
-              </div>
+              <img
+                src="/images/icons/delivery.png"
+                alt="Быстрая доставка"
+                className="w-16 h-16 mb-4"
+              />
+              <p className="text-xl font-semibold text-center">Быстрая доставка</p>
+              <p className="text-gray-600 text-center mt-2">
+                Доставляем заказы в кратчайшие сроки по всей стране.
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <img
+                src="/images/icons/price.png"
+                alt="Выгодные цены"
+                className="w-16 h-16 mb-4"
+              />
               <p className="text-xl font-semibold text-center">Выгодные цены</p>
+              <p className="text-gray-600 text-center mt-2">
+                Предлагаем лучшие цены и специальные предложения.
+              </p>
             </div>
           </div>
         </section>
 
+        {/* Subscription Section */}
         <section className="bg-blue-50 p-8 rounded-lg">
           <h3 className="text-3xl font-semibold mb-4 text-center">Подпишитесь на нашу рассылку</h3>
           <p className="text-center mb-6">
@@ -194,6 +217,7 @@ const Practice2: React.FC = () => {
         </section>
       </main>
 
+      {/* Footer */}
       <footer className="bg-gray-800 text-white p-4 mt-16">
         <p className="text-center">&copy; 2023 Наш книжный магазин. Все права защищены.</p>
       </footer>
@@ -204,8 +228,7 @@ const Practice2: React.FC = () => {
 const Practice3: React.FC = () => {
   return (
     <div className="min-h-screen bg-pink-200">
-      <BurgerMenu currentTab="practice3" onTabChange={() => {}} />
-
+      {/* Moodboard and Color Palette */}
       <section className="p-8">
         <h2 className="text-2xl font-semibold mb-4 text-center">Мудборд</h2>
         <Moodboard />
@@ -216,17 +239,20 @@ const Practice3: React.FC = () => {
         <ColorPalette />
       </section>
 
+      {/* Website Layout */}
       <section>
         <header className="h-64 flex items-center justify-center">
-          <h1 className="text-5xl font-bold text-pink-800">Японские сладости</h1>
+          <h1 className="text-5xl font-bold text-pink-800 text-center">Японские сладости</h1>
         </header>
 
         <main className="p-8">
+          {/* Products Section */}
           <section className="mb-16">
             <h3 className="text-3xl font-semibold mb-8 text-center text-pink-800">
               Популярные товары
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Product Cards */}
               <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
                 <img
                   src="/images/products/mochi.jpg"
@@ -235,9 +261,7 @@ const Practice3: React.FC = () => {
                 />
                 <h4 className="text-xl font-bold text-center text-pink-800">Моти</h4>
                 <p className="text-gray-600 text-center">Традиционные рисовые пирожные</p>
-                <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded">
-                  В корзину
-                </button>
+                <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded">В корзину</button>
               </div>
               <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
                 <img
@@ -249,9 +273,7 @@ const Practice3: React.FC = () => {
                   KitKat со вкусом матча
                 </h4>
                 <p className="text-gray-600 text-center">Популярный шоколад с зеленым чаем</p>
-                <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded">
-                  В корзину
-                </button>
+                <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded">В корзину</button>
               </div>
               <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
                 <img
@@ -261,13 +283,12 @@ const Practice3: React.FC = () => {
                 />
                 <h4 className="text-xl font-bold text-center text-pink-800">Дораяки</h4>
                 <p className="text-gray-600 text-center">Панкейки с бобовой пастой</p>
-                <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded">
-                  В корзину
-                </button>
+                <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded">В корзину</button>
               </div>
             </div>
           </section>
 
+          {/* About Us Section */}
           <section className="mb-16">
             <h3 className="text-3xl font-semibold mb-8 text-center text-pink-800">
               О нашем магазине
@@ -280,6 +301,7 @@ const Practice3: React.FC = () => {
           </section>
         </main>
 
+        {/* Footer */}
         <footer className="bg-pink-200 text-pink-800 p-4 mt-16">
           <p className="text-center">&copy; 2023 Японские сладости. Все права защищены.</p>
         </footer>
@@ -291,12 +313,12 @@ const Practice3: React.FC = () => {
 const Practice4: React.FC = () => {
   return (
     <div className="min-h-screen bg-dark-900 text-gray-300">
-      <BurgerMenu currentTab="practice4" onTabChange={() => {}} />
-
+      {/* Cyberpunk Style Analysis */}
       <section className="p-8">
         <CyberpunkStyle />
       </section>
 
+      {/* Cyberpunk Website Layout */}
       <section>
         <CyberpunkReview />
       </section>
