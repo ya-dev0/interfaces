@@ -163,33 +163,27 @@ const Practice2: React.FC = () => {
           <h3 className="text-3xl font-semibold mb-8 text-center">Почему выбирают нас</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center">
-              <img
-                src="/images/icons/assortment.png"
-                alt="Большой ассортимент"
-                className="w-16 h-16 mb-4"
-              />
+              <div className="w-16 h-16 mb-4 bg-blue-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-2xl font-bold">A</span>
+              </div>
               <p className="text-xl font-semibold text-center">Большой ассортимент книг</p>
               <p className="text-gray-600 text-center mt-2">
                 У нас вы найдете книги на любой вкус и предпочтения.
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <img
-                src="/images/icons/delivery.png"
-                alt="Быстрая доставка"
-                className="w-16 h-16 mb-4"
-              />
+              <div className="w-16 h-16 mb-4 bg-green-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-2xl font-bold">D</span>
+              </div>
               <p className="text-xl font-semibold text-center">Быстрая доставка</p>
               <p className="text-gray-600 text-center mt-2">
                 Доставляем заказы в кратчайшие сроки по всей стране.
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <img
-                src="/images/icons/price.png"
-                alt="Выгодные цены"
-                className="w-16 h-16 mb-4"
-              />
+              <div className="w-16 h-16 mb-4 bg-yellow-500 rounded-full flex items-center justify-center">
+                <span className="text-white text-2xl font-bold">₽</span>
+              </div>
               <p className="text-xl font-semibold text-center">Выгодные цены</p>
               <p className="text-gray-600 text-center mt-2">
                 Предлагаем лучшие цены и специальные предложения.
@@ -229,15 +223,21 @@ const Practice3: React.FC = () => {
   return (
     <div className="min-h-screen bg-pink-200">
       {/* Moodboard and Color Palette */}
-      <section className="p-8">
+      <section className="p-8 bg-white">
         <h2 className="text-2xl font-semibold mb-4 text-center">Мудборд</h2>
         <Moodboard />
       </section>
 
-      <section className="p-8">
+      {/* Divider Line */}
+      <div className="h-1 bg-gray-300"></div>
+
+      <section className="p-8 bg-white">
         <h2 className="text-2xl font-semibold mb-4 text-center">Цветовая палитра</h2>
         <ColorPalette />
       </section>
+
+      {/* Divider Line */}
+      <div className="h-1 bg-gray-300"></div>
 
       {/* Website Layout */}
       <section>
@@ -314,9 +314,12 @@ const Practice4: React.FC = () => {
   return (
     <div className="min-h-screen bg-dark-900 text-gray-300">
       {/* Cyberpunk Style Analysis */}
-      <section className="p-8">
+      <section className="p-8 bg-dark-800">
         <CyberpunkStyle />
       </section>
+
+      {/* Divider Line */}
+      <div className="h-1 bg-yellow-500"></div>
 
       {/* Cyberpunk Website Layout */}
       <section>
