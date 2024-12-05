@@ -17,7 +17,11 @@ const ColorPalette: React.FC = () => {
             className="w-12 h-12 rounded-full"
             style={{ backgroundColor: color.hex }}
           ></div>
-          <span className="mt-2 text-sm text-gray-600 text-center">{color.name}</span>
+          <span className="mt-2 text-sm text-gray-600 text-center">
+            {color.name}
+            <br />
+            {color.hex}
+          </span>
         </div>
       ))}
     </div>
