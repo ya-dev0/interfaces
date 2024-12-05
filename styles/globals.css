@@ -41,6 +41,12 @@ button:focus {
   .bg-neon-pink-hover {
     background-color: #cc007a;
   }
+  .bg-yellow-500 {
+    background-color: #F2E205;
+  }
+  .bg-yellow-600 {
+    background-color: #d1bb04;
+  }
 }
 
 /* Glitch effect */
