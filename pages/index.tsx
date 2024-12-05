@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NavTabs from '../components/NavTabs';
+import BurgerMenu from '../components/BurgerMenu';
 import Composition, { FigureData } from '../components/Composition';
 import Moodboard from '../components/Moodboard';
 import ColorPalette from '../components/ColorPalette';
@@ -14,11 +14,8 @@ const IndexPage: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">
-        Практические работы по композиции в дизайне
-      </h1>
-      <NavTabs currentTab={currentTab} onTabChange={handleTabChange} />
+    <div className="min-h-screen">
+      <BurgerMenu currentTab={currentTab} onTabChange={handleTabChange} />
 
       {currentTab === 'practice1' && <Practice1 />}
       {currentTab === 'practice2' && <Practice2 />}
@@ -28,11 +25,7 @@ const IndexPage: React.FC = () => {
   );
 };
 
-
 const Practice1: React.FC = () => {
-  // Практическая работа 1: Изучение стабильных и динамичных композиций, доминанты
-
-  // 1. Выбор пяти фигур
   const baseFigures: Omit<FigureData, 'position'>[] = [
     { id: 1, shape: 'circle', size: 60, color: 'red' },
     { id: 2, shape: 'square', size: 50, color: 'blue' },
@@ -41,19 +34,16 @@ const Practice1: React.FC = () => {
     { id: 5, shape: 'hexagon', size: 90, color: 'purple' },
   ];
 
-  // 2. Стабильная композиция
   const stableFigures: FigureData[] = baseFigures.map((figure, index) => ({
     ...figure,
     position: { x: 50, y: 60 + index * 5 },
   }));
 
-  // 3. Динамичная композиция
   const dynamicFigures: FigureData[] = baseFigures.map((figure, index) => ({
     ...figure,
     position: { x: 20 + index * 15, y: 20 + index * 15 },
   }));
 
-  // 4. Доминанта
   const dominantFigures: FigureData[] = baseFigures.map((figure) => ({
     ...figure,
     size: figure.id === 3 ? figure.size * 1.5 : figure.size,
@@ -65,8 +55,9 @@ const Practice1: React.FC = () => {
   }));
 
   return (
-    <div>
-      {/* Стабильная композиция */}
+    <div className="min-h-screen p-4">
+      <h1 className="text-3xl font-bold mb-6 text-center">Практическая работа 1</h1>
+
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4">Стабильная композиция</h2>
         <div className="border w-full h-96 mx-auto relative">
@@ -74,7 +65,6 @@ const Practice1: React.FC = () => {
         </div>
       </section>
 
-      {/* Динамичная композиция */}
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4">Динамичная композиция</h2>
         <div className="border w-full h-96 mx-auto relative">
@@ -82,43 +72,23 @@ const Practice1: React.FC = () => {
         </div>
       </section>
 
-      {/* Доминанта */}
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4">Композиция с доминантой</h2>
         <div className="border w-full h-96 mx-auto relative">
           <Composition figures={dominantFigures} />
         </div>
       </section>
-
-      {/* Размышления */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Размышления</h2>
-        <p>
-          После завершения композиций, мы можем увидеть, как расположение, размер и цвет фигур влияют на
-          общее восприятие композиции. В стабильной композиции элементы расположены так, чтобы создать
-          баланс и гармонию. В динамичной композиции расположение фигур создает ощущение движения и
-          напряжения. В композиции с доминантой одна фигура выделяется среди остальных, привлекая
-          основное внимание.
-        </p>
-      </section>
     </div>
   );
 };
 
 const Practice2: React.FC = () => {
-  // Практическая работа 2: Применение композиционных принципов в дизайне веб-страницы
-
-  // 1. Определение темы веб-страницы
-  const theme = 'Сайт книжного магазина';
-
-  // 3. Выбор цветовой палитры
   const colorPalette = {
-    primary: '#2c3e50', // темно-синий
-    secondary: '#ecf0f1', // светло-серый
-    accent: '#e74c3c', // красный
+    primary: '#2c3e50',
+    secondary: '#ecf0f1',
+    accent: '#e74c3c',
   };
 
-  // Стили для использования цветовой палитры
   const styles = {
     header: {
       backgroundColor: colorPalette.primary,
@@ -131,8 +101,9 @@ const Practice2: React.FC = () => {
   };
 
   return (
-    <div>
-      {/* Шапка сайта с доминантой */}
+    <div className="min-h-screen" style={{ backgroundColor: colorPalette.secondary }}>
+      <BurgerMenu currentTab="practice2" onTabChange={() => {}} />
+
       <header
         className="h-72 flex items-center justify-center"
         style={{
@@ -147,13 +118,10 @@ const Practice2: React.FC = () => {
         </h2>
       </header>
 
-      {/* Основной контент */}
       <main className="p-8">
-        {/* Секция бестселлеров */}
         <section className="mb-16">
           <h3 className="text-3xl font-semibold mb-8 text-center">Наши бестселлеры</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Карточки с книгами */}
             <div className="border p-6 flex flex-col items-center">
               <img
                 src="/images/book1.jpg"
@@ -184,7 +152,6 @@ const Practice2: React.FC = () => {
           </div>
         </section>
 
-        {/* Секция преимуществ */}
         <section className="bg-gray-100 p-8 mb-16">
           <h3 className="text-3xl font-semibold mb-8 text-center">Почему выбирают нас</h3>
           <div className="flex flex-col md:flex-row items-center justify-around">
@@ -194,7 +161,6 @@ const Practice2: React.FC = () => {
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
-                {/* Иконка ассортимента */}
                 <path d="M2 2h16v16H2V2zm2 2v12h12V4H4z" />
               </svg>
               <p className="text-xl font-semibold text-center">Большой ассортимент книг</p>
@@ -205,7 +171,6 @@ const Practice2: React.FC = () => {
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
-                {/* Иконка доставки */}
                 <path d="M3 3h14v14H3V3zm2 2v10h10V5H5z" />
               </svg>
               <p className="text-xl font-semibold text-center">Быстрая доставка</p>
@@ -216,7 +181,6 @@ const Practice2: React.FC = () => {
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
-                {/* Иконка цены */}
                 <path d="M5 5h10v10H5V5zm2 2v6h6V7H7z" />
               </svg>
               <p className="text-xl font-semibold text-center">Выгодные цены</p>
@@ -224,7 +188,6 @@ const Practice2: React.FC = () => {
           </div>
         </section>
 
-        {/* Секция подписки */}
         <section className="bg-blue-50 p-8 rounded-lg">
           <h3 className="text-3xl font-semibold mb-4 text-center">Подпишитесь на нашу рассылку</h3>
           <p className="text-center mb-6">
@@ -243,84 +206,39 @@ const Practice2: React.FC = () => {
         </section>
       </main>
 
-      {/* Подвал */}
       <footer className="bg-gray-800 text-white p-4 mt-16">
         <p className="text-center">&copy; 2023 Наш книжный магазин. Все права защищены.</p>
       </footer>
-
-      {/* Размышления */}
-      <section className="p-8">
-        <h3 className="text-2xl font-semibold mb-4">Размышления</h3>
-        <p>
-          В этой работе мы адаптировали карточки под конкретные книги и улучшили композицию страницы.
-          Были использованы различные принципы композиции:
-        </p>
-        <ul className="list-disc list-inside space-y-2 mt-2">
-          <li>
-            <strong>Баланс:</strong> Элементы расположены симметрично и гармонично по всей странице.
-          </li>
-          <li>
-            <strong>Контраст:</strong> Использование ярких цветов для выделения важных элементов, таких как
-            кнопки и заголовки.
-          </li>
-          <li>
-            <strong>Доминанта:</strong> Главный заголовок и изображения книг привлекают внимание посетителей.
-          </li>
-          <li>
-            <strong>Ритм:</strong> Повторение стилей карточек и секций создают визуальный ритм.
-          </li>
-          <li>
-            <strong>Пропорция:</strong> Размеры элементов соотносятся друг с другом, создавая гармонию.
-          </li>
-          <li>
-            <strong>Единство:</strong> Общая цветовая палитра и стиль связывают все элементы дизайна вместе.
-          </li>
-        </ul>
-      </section>
     </div>
   );
 };
 
 const Practice3: React.FC = () => {
-  // Практическая работа 3: Развитие навыков в цветоведении и композиции
-
-  // ... код для Practice3, как был предоставлен ранее ...
-  
-  // Код для Practice3 уже был предоставлен, и его можно оставить без изменений.
-  
   return (
-    // Код для Practice3 из предыдущего ответа
-    <div>
-      {/* Мудборд */}
-      <section className="mb-8">
+    <div className="min-h-screen bg-pink-200">
+      <BurgerMenu currentTab="practice3" onTabChange={() => {}} />
+
+      <section className="p-8">
         <h2 className="text-2xl font-semibold mb-4 text-center">Мудборд</h2>
         <Moodboard />
       </section>
 
-      {/* Цветовая палитра */}
-      <section className="mb-12">
+      <section className="p-8">
         <h2 className="text-2xl font-semibold mb-4 text-center">Цветовая палитра</h2>
         <ColorPalette />
       </section>
 
-      {/* Макет сайта */}
       <section>
-        <h2 className="text-2xl font-semibold mb-4 text-center">Макет сайта</h2>
-
-        {/* Шапка сайта */}
-        <header className="h-64 flex items-center justify-center bg-pink-200">
+        <header className="h-64 flex items-center justify-center">
           <h1 className="text-5xl font-bold text-pink-800">Японские сладости</h1>
         </header>
 
-        {/* Основной контент */}
         <main className="p-8">
-          {/* Секция с продуктами */}
           <section className="mb-16">
             <h3 className="text-3xl font-semibold mb-8 text-center text-pink-800">
               Популярные товары
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Карточки с продуктами */}
               <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
                 <img
                   src="/images/products/mochi.jpg"
@@ -362,7 +280,6 @@ const Practice3: React.FC = () => {
             </div>
           </section>
 
-          {/* Секция о компании */}
           <section className="mb-16">
             <h3 className="text-3xl font-semibold mb-8 text-center text-pink-800">
               О нашем магазине
@@ -375,59 +292,23 @@ const Practice3: React.FC = () => {
           </section>
         </main>
 
-        {/* Подвал */}
         <footer className="bg-pink-200 text-pink-800 p-4 mt-16">
           <p className="text-center">&copy; 2023 Японские сладости. Все права защищены.</p>
         </footer>
-      </section>
-
-      {/* Размышления */}
-      <section className="p-8">
-        <h3 className="text-2xl font-semibold mb-4">Размышления</h3>
-        <p>
-          В этой работе мы создали мудборд и цветовую палитру, которые помогли нам определить стиль
-          и настроение нашего онлайн-магазина японских сладостей. Мы использовали мягкие и приятные
-          цвета, такие как розовый и светло-зеленый, чтобы передать нежность и изысканность
-          японских десертов. Макет сайта отражает принципы гармонии и баланса, а также обеспечивает
-          удобство для пользователей.
-        </p>
-        <ul className="list-disc list-inside space-y-2 mt-2">
-          <li>
-            <strong>Баланс:</strong> Элементы размещены симметрично, создавая ощущение стабильности.
-          </li>
-          <li>
-            <strong>Контраст:</strong> Использование более ярких оттенков розового для кнопок и заголовков
-            выделяет важные элементы.
-          </li>
-          <li>
-            <strong>Доминанта:</strong> Крупные изображения продуктов привлекают внимание посетителей.
-          </li>
-          <li>
-            <strong>Ритм:</strong> Повторение стилей карточек продуктов создает визуальный ритм.
-          </li>
-          <li>
-            <strong>Пропорция:</strong> Размеры элементов соотносятся друг с другом для гармоничного вида.
-          </li>
-          <li>
-            <strong>Единство:</strong> Общая цветовая палитра и тема связывают все элементы дизайна вместе.
-          </li>
-        </ul>
       </section>
     </div>
   );
 };
 
 const Practice4: React.FC = () => {
-  // Практическая работа 4: Создание объекта дизайна в заданной стилистике (Киберпанк)
-
   return (
-    <div className="bg-dark-900 text-gray-300">
-      {/* Исследование стиля */}
+    <div className="min-h-screen bg-dark-900 text-gray-300">
+      <BurgerMenu currentTab="practice4" onTabChange={() => {}} />
+
       <section className="p-8">
         <CyberpunkStyle />
       </section>
 
-      {/* Макет сайта-обзора */}
       <section>
         <CyberpunkReview />
       </section>
