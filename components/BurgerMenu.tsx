@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 
 interface BurgerMenuProps {
-  currentTab: string;
   onTabChange: (tab: string) => void;
-  menuColor?: string;
 }
 
-const BurgerMenu: React.FC<BurgerMenuProps> = ({ currentTab, onTabChange, menuColor = '#fff' }) => {
+const BurgerMenu: React.FC<BurgerMenuProps> = ({ onTabChange }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleMenuClick = () => {
@@ -20,12 +18,11 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ currentTab, onTabChange, menuCo
 
   return (
     <div className="fixed top-4 right-4 z-50">
-      <button onClick={handleMenuClick} className="text-2xl focus:outline-none">
-        {/* Иконка меню */}
-        <div className="space-y-1">
-          <div className="w-6 h-0.5" style={{ backgroundColor: menuColor }}></div>
-          <div className="w-6 h-0.5" style={{ backgroundColor: menuColor }}></div>
-          <div className="w-6 h-0.5" style={{ backgroundColor: menuColor }}></div>
+      <button onClick={handleMenuClick} className="focus:outline-none">
+        <div className="w-6 h-6 flex flex-col justify-between">
+          <span className="block w-full h-0.5 bg-white"></span>
+          <span className="block w-full h-0.5 bg-white"></span>
+          <span className="block w-full h-0.5 bg-white"></span>
         </div>
       </button>
       {isOpen && (
