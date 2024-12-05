@@ -2,25 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Дополнительные глобальные стили */
-
 body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3, h4 {
-  color: #2c3e50;
-}
-
 button:focus {
   outline: none;
 }
 
-/* Добавляем пользовательские цвета в Tailwind */
-
 @layer utilities {
+  .bg-pink-200 {
+    background-color: #FFC0CB;
+  }
+  .text-pink-800 {
+    color: #b03060;
+  }
+  .bg-pink-500 {
+    background-color: #FF69B4;
+  }
   .bg-dark-900 {
     background-color: #0d0d0d;
   }
@@ -32,17 +33,5 @@ button:focus {
   }
   .text-neon-blue {
     color: #00ffff;
-  }
-  .border-neon-pink {
-    border-color: #ff0099;
-  }
-  .bg-pink-200 {
-    background-color: #FFC0CB;
-  }
-  .text-pink-800 {
-    color: #b03060;
-  }
-  .bg-pink-500 {
-    background-color: #FF69B4;
   }
 }
