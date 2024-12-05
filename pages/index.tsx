@@ -1,9 +1,9 @@
 import React from 'react';
-import Composition from '../components/Composition';
+import Composition, { FigureData, ShapeType } from '../components/Composition';
 
 const IndexPage: React.FC = () => {
   // 1. Выбор пяти фигур
-  const baseFigures = [
+  const baseFigures: Omit<FigureData, 'position'>[] = [
     { id: 1, shape: 'circle', size: 60, color: 'red' },
     { id: 2, shape: 'square', size: 50, color: 'blue' },
     { id: 3, shape: 'triangle', size: 70, color: 'green' },
@@ -12,19 +12,19 @@ const IndexPage: React.FC = () => {
   ];
 
   // 2. Стабильная композиция
-  const stableFigures = baseFigures.map((figure, index) => ({
+  const stableFigures: FigureData[] = baseFigures.map((figure, index) => ({
     ...figure,
     position: { x: 50, y: 60 + index * 5 },
   }));
 
   // 3. Динамичная композиция
-  const dynamicFigures = baseFigures.map((figure, index) => ({
+  const dynamicFigures: FigureData[] = baseFigures.map((figure, index) => ({
     ...figure,
     position: { x: 20 + index * 15, y: 20 + index * 15 },
   }));
 
   // 4. Доминанта
-  const dominantFigures = baseFigures.map((figure) => ({
+  const dominantFigures: FigureData[] = baseFigures.map((figure) => ({
     ...figure,
     size: figure.id === 3 ? figure.size * 1.5 : figure.size,
     color: figure.id === 3 ? 'orange' : figure.color,
