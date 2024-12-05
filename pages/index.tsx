@@ -3,6 +3,8 @@ import NavTabs from '../components/NavTabs';
 import Composition, { FigureData } from '../components/Composition';
 import Moodboard from '../components/Moodboard';
 import ColorPalette from '../components/ColorPalette';
+import CyberpunkStyle from '../components/CyberpunkStyle';
+import CyberpunkReview from '../components/CyberpunkReview';
 
 const IndexPage: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<string>('practice1');
@@ -21,9 +23,11 @@ const IndexPage: React.FC = () => {
       {currentTab === 'practice1' && <Practice1 />}
       {currentTab === 'practice2' && <Practice2 />}
       {currentTab === 'practice3' && <Practice3 />}
+      {currentTab === 'practice4' && <Practice4 />}
     </div>
   );
 };
+
 
 const Practice1: React.FC = () => {
   // Практическая работа 1: Изучение стабильных и динамичных композиций, доминанты
@@ -408,6 +412,24 @@ const Practice3: React.FC = () => {
             <strong>Единство:</strong> Общая цветовая палитра и тема связывают все элементы дизайна вместе.
           </li>
         </ul>
+      </section>
+    </div>
+  );
+};
+
+const Practice4: React.FC = () => {
+  // Практическая работа 4: Создание объекта дизайна в заданной стилистике (Киберпанк)
+
+  return (
+    <div className="bg-dark-900 text-gray-300">
+      {/* Исследование стиля */}
+      <section className="p-8">
+        <CyberpunkStyle />
+      </section>
+
+      {/* Макет сайта-обзора */}
+      <section>
+        <CyberpunkReview />
       </section>
     </div>
   );
