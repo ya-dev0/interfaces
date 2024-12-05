@@ -1,3 +1,4 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,4 +35,81 @@ button:focus {
   .text-neon-blue {
     color: #00ffff;
   }
+  .bg-neon-pink {
+    background-color: #ff0099;
+  }
+  .bg-neon-pink-hover {
+    background-color: #cc007a;
+  }
+}
+
+/* Glitch effect */
+@keyframes glitch {
+  0% {
+    clip: rect(44px, 9999px, 56px, 0);
+    transform: skew(0.5deg);
+  }
+  10% {
+    clip: rect(20px, 9999px, 85px, 0);
+    transform: skew(0.5deg);
+  }
+  20% {
+    clip: rect(56px, 9999px, 34px, 0);
+    transform: skew(0.5deg);
+  }
+  30% {
+    clip: rect(74px, 9999px, 39px, 0);
+    transform: skew(0.5deg);
+  }
+  40% {
+    clip: rect(64px, 9999px, 100px, 0);
+    transform: skew(0.5deg);
+  }
+  50% {
+    clip: rect(100px, 9999px, 50px, 0);
+    transform: skew(0.5deg);
+  }
+  60% {
+    clip: rect(64px, 9999px, 100px, 0);
+    transform: skew(0.5deg);
+  }
+  70% {
+    clip: rect(74px, 9999px, 39px, 0);
+    transform: skew(0.5deg);
+  }
+  80% {
+    clip: rect(56px, 9999px, 34px, 0);
+    transform: skew(0.5deg);
+  }
+  90% {
+    clip: rect(20px, 9999px, 85px, 0);
+    transform: skew(0.5deg);
+  }
+  100% {
+    clip: rect(44px, 9999px, 56px, 0);
+    transform: skew(0.5deg);
+  }
+}
+
+.glitch {
+  position: relative;
+  color: #fff;
+  animation: glitch 1s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+
+.glitch::before {
+  animation: glitch 1s infinite;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::after {
+  animation: glitch 1s infinite;
+  clip: rect(0, 900px, 0, 0);
 }
