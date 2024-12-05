@@ -10,9 +10,9 @@ const colors = [
 
 const ColorPalette: React.FC = () => {
   return (
-    <div className="flex justify-center space-x-4 mb-8">
+    <div className="flex flex-wrap justify-center space-x-4 mb-8">
       {colors.map((color, index) => (
-        <div key={index} className="flex flex-col items-center">
+        <div key={index} className="flex flex-col items-center mb-4">
           <div
             className="w-12 h-12 rounded-full"
             style={{ backgroundColor: color.hex }}
