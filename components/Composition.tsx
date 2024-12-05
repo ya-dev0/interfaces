@@ -1,9 +1,13 @@
 import React from 'react';
 import Figure from './Figure';
 
-interface FigureData {
+// Экспортируем тип ShapeType для использования в других файлах
+export type ShapeType = 'circle' | 'square' | 'triangle' | 'rectangle' | 'hexagon';
+
+// Экспортируем интерфейс FigureData для использования в других файлах
+export interface FigureData {
   id: number;
-  shape: 'circle' | 'square' | 'triangle' | 'rectangle' | 'hexagon';
+  shape: ShapeType;
   size: number;
   color: string;
   position: { x: number; y: number };
