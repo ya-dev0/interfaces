@@ -21,6 +21,21 @@ button:focus {
 /* Добавляем пользовательские цвета в Tailwind */
 
 @layer utilities {
+  .bg-dark-900 {
+    background-color: #0d0d0d;
+  }
+  .bg-dark-800 {
+    background-color: #1a1a1a;
+  }
+  .text-neon-pink {
+    color: #ff0099;
+  }
+  .text-neon-blue {
+    color: #00ffff;
+  }
+  .border-neon-pink {
+    border-color: #ff0099;
+  }
   .bg-pink-200 {
     background-color: #FFC0CB;
   }
