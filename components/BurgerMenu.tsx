@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { FiMenu } from 'react-icons/fi';
 
 interface BurgerMenuProps {
   currentTab: string;
   onTabChange: (tab: string) => void;
+  menuColor?: string;
 }
 
-const BurgerMenu: React.FC<BurgerMenuProps> = ({ currentTab, onTabChange }) => {
+const BurgerMenu: React.FC<BurgerMenuProps> = ({ currentTab, onTabChange, menuColor = '#fff' }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleMenuClick = () => {
@@ -20,8 +20,13 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ currentTab, onTabChange }) => {
 
   return (
     <div className="fixed top-4 right-4 z-50">
-      <button onClick={handleMenuClick} className="text-2xl text-white focus:outline-none">
-        <FiMenu />
+      <button onClick={handleMenuClick} className="text-2xl focus:outline-none">
+        {/* Иконка меню */}
+        <div className="space-y-1">
+          <div className="w-6 h-0.5" style={{ backgroundColor: menuColor }}></div>
+          <div className="w-6 h-0.5" style={{ backgroundColor: menuColor }}></div>
+          <div className="w-6 h-0.5" style={{ backgroundColor: menuColor }}></div>
+        </div>
       </button>
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
