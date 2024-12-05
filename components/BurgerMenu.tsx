@@ -1,3 +1,4 @@
+// components/BurgerMenu.tsx
 import React, { useState } from 'react';
 
 interface BurgerMenuProps {
