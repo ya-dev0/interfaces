@@ -32,6 +32,14 @@ const NavTabs: React.FC<NavTabsProps> = ({ currentTab, onTabChange }) => {
       >
         Практическая работа 3
       </button>
+      <button
+        className={`py-2 px-4 focus:outline-none ${
+          currentTab === 'practice4' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-500'
+        }`}
+        onClick={() => onTabChange('practice4')}
+      >
+        Практическая работа 4
+      </button>
     </div>
   );
 };
