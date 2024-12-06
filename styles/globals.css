@@ -52,53 +52,56 @@ button:focus {
 /* Glitch effect */
 @keyframes glitch {
   0% {
-    clip: rect(44px, 9999px, 56px, 0);
+    clip: rect(0, 9999px, 0.7em, 0);
     transform: skew(0.5deg);
   }
   10% {
-    clip: rect(20px, 9999px, 85px, 0);
+    clip: rect(0.1em, 9999px, 0.6em, 0);
     transform: skew(0.5deg);
   }
   20% {
-    clip: rect(56px, 9999px, 34px, 0);
+    clip: rect(0.2em, 9999px, 0.8em, 0);
     transform: skew(0.5deg);
   }
   30% {
-    clip: rect(74px, 9999px, 39px, 0);
+    clip: rect(0.05em, 9999px, 0.75em, 0);
     transform: skew(0.5deg);
   }
   40% {
-    clip: rect(64px, 9999px, 100px, 0);
+    clip: rect(0.15em, 9999px, 0.9em, 0);
     transform: skew(0.5deg);
   }
   50% {
-    clip: rect(100px, 9999px, 50px, 0);
+    clip: rect(0em, 9999px, 0.8em, 0);
     transform: skew(0.5deg);
   }
   60% {
-    clip: rect(64px, 9999px, 100px, 0);
+    clip: rect(0.2em, 9999px, 0.85em, 0);
     transform: skew(0.5deg);
   }
   70% {
-    clip: rect(74px, 9999px, 39px, 0);
+    clip: rect(0.1em, 9999px, 0.5em, 0);
     transform: skew(0.5deg);
   }
   80% {
-    clip: rect(56px, 9999px, 34px, 0);
+    clip: rect(0.05em, 9999px, 0.9em, 0);
     transform: skew(0.5deg);
   }
   90% {
-    clip: rect(20px, 9999px, 85px, 0);
+    clip: rect(0.1em, 9999px, 0.7em, 0);
     transform: skew(0.5deg);
   }
   100% {
-    clip: rect(44px, 9999px, 56px, 0);
+    clip: rect(0.15em, 9999px, 0.8em, 0);
     transform: skew(0.5deg);
   }
 }
 
 .glitch {
   position: relative;
+  display: inline-block;
+  line-height: 1.2;
+  white-space: nowrap;
   color: #fff;
   animation: glitch 1s infinite;
 }
@@ -108,14 +111,13 @@ button:focus {
   content: attr(data-text);
   position: absolute;
   left: 0;
+  color: #F2E205; /* Желтый цвет для эффекта глюка */
 }
 
 .glitch::before {
   animation: glitch 1s infinite;
-  clip: rect(0, 900px, 0, 0);
 }
 
 .glitch::after {
   animation: glitch 1s infinite;
-  clip: rect(0, 900px, 0, 0);
 }
