@@ -4,8 +4,12 @@ import CyberpunkReview from './CyberpunkReview';
 
 const Practice4: React.FC = () => {
   return (
-    <div className="min-h-screen bg-dark-900 text-gray-300">
-      <section className="p-8 bg-dark-800">
+    <div className="min-h-screen bg-dark-900 text-gray-300" style={{
+      backgroundImage: 'url(/images/cyberpunk/style-analysis/tech.jpg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }}>
+      <section className="p-8 bg-dark-800 bg-opacity-90">
         <CyberpunkStyle />
       </section>
 
