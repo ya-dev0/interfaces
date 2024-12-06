@@ -31,11 +31,9 @@ const CyberpunkReview: React.FC = () => {
   };
 
   return (
-    <div className="bg-dark-900 text-gray-300 relative" style={{
-      backgroundImage: 'url(/images/cyberpunk/review/bg.jpg)',
+    <div className="bg-dark-900 text-gray-300 relative md:py-8" style={{
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundAttachment: 'fixed'
     }}>
       {/* Header */}
       <header
@@ -48,7 +46,6 @@ const CyberpunkReview: React.FC = () => {
         </h1>
       </header>
 
-      {/* Main Content */}
       <main className="p-8">
         {/* Overview */}
         <section className="mb-12">
@@ -56,43 +53,50 @@ const CyberpunkReview: React.FC = () => {
             Обзор
           </h2>
           <p className="text-gray-300 mb-4">
-            "Киберпанк: Бегущие по краю" — аниме-сериал, созданный по мотивам вселенной Cyberpunk 2077.
-            Сюжет вращается вокруг молодого героя, который пытается выжить в мегаполисе будущего, где технологии
-            тесно переплелись с преступностью. Здесь корпорации владеют всем, а человеческая жизнь
-            зачастую не стоит и чипа, встроенного в мозг.
+            "Киберпанк: Бегущие по краю" — аниме, основанное на вселенной Cyberpunk 2077. История молодого героя, пытающегося выжить в городе, где корпорации и технологии правят миром, а человеческая жизнь ничтожна.
           </p>
           <p className="text-gray-300">
-            Сериал выделяется насыщенной визуальной стилистикой, динамичными сценами и глубокими 
-            философскими темами: что делает нас людьми? Можно ли сохранить мораль в мире, где 
-            власть и информация определяют судьбы миллионов?
+            Это произведение исследует грань между человеком и машиной, душой и информацией. Здесь моральные ценности подвергаются испытанию, а свобода становится товаром.
           </p>
         </section>
 
-        {/* Carousel */}
+        {/* Галерея: На маленьких экранах карусель, на больших - в ряд */}
         <section className="mb-12">
           <h2 className="text-3xl font-semibold mb-4 text-neon-blue glitch" data-text="Галерея">
             Галерея
           </h2>
-          <div className="relative w-full md:w-2/3 mx-auto">
+
+          {/* Мобильная карусель */}
+          <div className="relative w-full md:hidden">
             <img
               src={images[currentIndex].src}
               alt={images[currentIndex].alt}
               className="w-full h-64 object-cover"
             />
-            {/* Prev Button */}
             <button
               onClick={handlePrev}
               className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-dark-800 bg-opacity-50 text-white px-3 py-2"
             >
               &#10094;
             </button>
-            {/* Next Button */}
             <button
               onClick={handleNext}
               className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-dark-800 bg-opacity-50 text-white px-3 py-2"
             >
               &#10095;
             </button>
+          </div>
+
+          {/* На больших экранах изображения в ряд и меньше */}
+          <div className="hidden md:flex md:space-x-4 md:justify-center mt-8">
+            {images.map((img, idx) => (
+              <img
+                key={idx}
+                src={img.src}
+                alt={img.alt}
+                className="w-32 h-32 object-cover hover:opacity-90 transition"
+              />
+            ))}
           </div>
         </section>
 
@@ -102,27 +106,22 @@ const CyberpunkReview: React.FC = () => {
             Анализ стиля
           </h2>
           <p className="text-gray-300 mb-4">
-            Аниме мастерски передает атмосферу киберпанка: неоновые огни, 
-            высокотехнологичные импланты, урбанистические джунгли из стекла и металла.
-            Контраст между темными фонами и яркими неоновыми цветами подчеркивает
-            напряжённость и хаос этого мира.
+            Аниме пропитано контрастами: темные улицы и неоновые огни, биомодификации и человеческие чувства. 
+            Зрителю предлагают задуматься о том, где заканчивается человек и начинается машина, а где заканчивается реальность и начинается иллюзия.
           </p>
           <p className="text-gray-300">
-            Персонажи аниме отражают борьбу за индивидуальность и человечность в 
-            обществе, где чувства можно контролировать, а воспоминания переписывать. 
-            Именно эта идея — сохранение собственной сущности в мире, где всё можно изменить, 
-            — делает "Киберпанк: Бегущие по краю" таким запоминающимся.
+            Авторы умело передают дух киберпанка: беспощадность мегаполиса, власть корпораций, хрупкость человечности.
+            Герои аниме не только борются за выживание, но и за право быть собой в мире, который стремится подчинить всё своей логике.
           </p>
         </section>
 
-        {/* Additional text with neon style */}
+        {/* Дополнительный неоновый текст */}
         <section className="mb-12 text-center">
-          <p className="text-neon-pink glitch" data-text="Виртуальная реальность или жестокая реальность?">
-            Виртуальная реальность или жестокая реальность?
+          <p className="text-neon-pink glitch" data-text="Симуляция или жизнь?">
+            Симуляция или жизнь?
           </p>
           <p className="text-gray-300 mt-4">
-            Этот вопрос пронизывает всё произведение. Можно ли убежать от боли и страха в цифровую утопию,
-            или это всего лишь иллюзия, скрывающая мрак настоящего?
+            Здесь нет простых ответов. Но именно этот поиск истины среди кибернетических чудес и искусственных воспоминаний делает аниме таким захватывающим.
           </p>
         </section>
 
@@ -134,7 +133,6 @@ const CyberpunkReview: React.FC = () => {
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="bg-dark-800 text-gray-400 p-4">
         <p className="text-center">
           &copy; 2023 Обзор аниме "Киберпанк: Бегущие по краю"
