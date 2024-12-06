@@ -1,4 +1,3 @@
-// components/BurgerMenu.tsx
 import React, { useState } from 'react';
 
 interface BurgerMenuProps {
@@ -19,7 +18,10 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ onTabChange }) => {
 
   return (
     <div className="fixed top-4 right-4 z-50">
-      <button onClick={handleMenuClick} className="focus:outline-none">
+      <button 
+        onClick={handleMenuClick} 
+        className="focus:outline-none bg-black rounded-full p-3 flex items-center justify-center"
+      >
         <div className="w-6 h-6 flex flex-col justify-between">
           <span className="block w-full h-0.5 bg-white"></span>
           <span className="block w-full h-0.5 bg-white"></span>
