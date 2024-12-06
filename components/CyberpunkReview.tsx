@@ -30,18 +30,21 @@ const CyberpunkReview: React.FC = () => {
     );
   };
 
+  const reviewStyle = {
+    backgroundImage: 'url(/images/cyberpunk/review/bg.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  };
+
   return (
-    <div className="bg-dark-900 text-gray-300 relative md:py-8" style={{
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    }}>
+    <div className="bg-dark-900 text-gray-300 relative md:py-8" style={reviewStyle}>
       {/* Header */}
       <header
         className="h-64 flex items-center justify-center bg-cover bg-center relative"
         style={{ backgroundImage: 'url(/images/cyberpunk/review/header.jpg)' }}
       >
         <div className="absolute inset-0 bg-dark-900 opacity-50"></div>
-        <h1 className="text-5xl font-bold text-neon-pink text-center z-10 glitch" data-text="Киберпанк: Бегущие по краю">
+        <h1 className="text-5xl font-bold text-yellow-500 text-center z-10 glitch" data-text="Киберпанк: Бегущие по краю">
           Киберпанк: Бегущие по краю
         </h1>
       </header>
@@ -49,20 +52,20 @@ const CyberpunkReview: React.FC = () => {
       <main className="p-8">
         {/* Overview */}
         <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-4 text-neon-blue glitch" data-text="Обзор">
+          <h2 className="text-3xl font-semibold mb-4 text-yellow-500 glitch" data-text="Обзор">
             Обзор
           </h2>
           <p className="text-gray-300 mb-4">
-            "Киберпанк: Бегущие по краю" — аниме, основанное на вселенной Cyberpunk 2077. История молодого героя, пытающегося выжить в городе, где корпорации и технологии правят миром, а человеческая жизнь ничтожна.
+            "Киберпанк: Бегущие по краю" — аниме о мире технологий и корпораций...
           </p>
           <p className="text-gray-300">
-            Это произведение исследует грань между человеком и машиной, душой и информацией. Здесь моральные ценности подвергаются испытанию, а свобода становится товаром.
+            Здесь информация — валюта, а человеческие эмоции — товар. Герой пытается понять себя и свою роль в этом мире, полном искусственных воспоминаний и навязанных идеалов.
           </p>
         </section>
 
-        {/* Галерея: На маленьких экранах карусель, на больших - в ряд */}
+        {/* Галерея */}
         <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-4 text-neon-blue glitch" data-text="Галерея">
+          <h2 className="text-3xl font-semibold mb-4 text-yellow-500 glitch" data-text="Галерея">
             Галерея
           </h2>
 
@@ -87,7 +90,7 @@ const CyberpunkReview: React.FC = () => {
             </button>
           </div>
 
-          {/* На больших экранах изображения в ряд и меньше */}
+          {/* На больших экранах изображения в ряд */}
           <div className="hidden md:flex md:space-x-4 md:justify-center mt-8">
             {images.map((img, idx) => (
               <img
@@ -100,18 +103,16 @@ const CyberpunkReview: React.FC = () => {
           </div>
         </section>
 
-        {/* Analysis */}
+        {/* Анализ стиля */}
         <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-4 text-neon-blue glitch" data-text="Анализ стиля">
+          <h2 className="text-3xl font-semibold mb-4 text-yellow-500 glitch" data-text="Анализ стиля">
             Анализ стиля
           </h2>
           <p className="text-gray-300 mb-4">
-            Аниме пропитано контрастами: темные улицы и неоновые огни, биомодификации и человеческие чувства. 
-            Зрителю предлагают задуматься о том, где заканчивается человек и начинается машина, а где заканчивается реальность и начинается иллюзия.
+            Контрасты света и тени, неоновые блики, импланты, меняющие природу человека — все это создает атмосферу, где границы между реальностью и симуляцией размыты.
           </p>
           <p className="text-gray-300">
-            Авторы умело передают дух киберпанка: беспощадность мегаполиса, власть корпораций, хрупкость человечности.
-            Герои аниме не только борются за выживание, но и за право быть собой в мире, который стремится подчинить всё своей логике.
+            Зритель сталкивается с вопросами: что значит быть человеком, когда можно изменить тело и разум? Где кончается свобода и начинается программа?
           </p>
         </section>
 
@@ -121,7 +122,7 @@ const CyberpunkReview: React.FC = () => {
             Симуляция или жизнь?
           </p>
           <p className="text-gray-300 mt-4">
-            Здесь нет простых ответов. Но именно этот поиск истины среди кибернетических чудес и искусственных воспоминаний делает аниме таким захватывающим.
+            Нет простых ответов, но именно поиск истины среди корпораций, хакеров и цифровых миров наполняет сериал глубоким смыслом.
           </p>
         </section>
 
