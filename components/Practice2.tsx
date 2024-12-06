@@ -13,7 +13,7 @@ const Practice2: React.FC = () => {
       color: colorPalette.secondary,
     },
     button: {
-      backgroundColor: colorPalette.accent,
+      backgroundColor: '#10b981', // Зеленый цвет (bg-green-500)
       color: '#fff',
     },
   };
@@ -34,91 +34,70 @@ const Practice2: React.FC = () => {
         </h2>
       </header>
 
-      <main className="p-8">
-        <section className="mb-16">
-          <h3 className="text-3xl font-semibold mb-8 text-center">Наши бестселлеры</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
-              <img
-                src="/images/book1.jpg"
-                alt="Tell Me Your Life Story, Dad"
-                className="mb-4 w-full h-64 object-contain"
-              />
-              <h4 className="text-xl font-bold text-center">Tell Me Your Life Story, Dad</h4>
-              <p className="text-gray-600 text-center">Автор: Questions About Me</p>
-              <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Купить</button>
-            </div>
-            <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
-              <img
-                src="/images/book2.jpg"
-                alt="Trump: The Art of the Deal"
-                className="mb-4 w-full h-64 object-contain"
-              />
-              <h4 className="text-xl font-bold text-center">Trump: The Art of the Deal</h4>
-              <p className="text-gray-600 text-center">Автор: Donald J. Trump</p>
-              <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Купить</button>
-            </div>
-            <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg">
-              <img
-                src="/images/book3.jpg"
-                alt="Maybe You Should Talk to Someone"
-                className="mb-4 w-full h-64 object-contain"
-              />
-              <h4 className="text-xl font-bold text-center">Maybe You Should Talk to Someone</h4>
-              <p className="text-gray-600 text-center">Автор: Lori Gottlieb</p>
-              <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Купить</button>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-gray-100 p-8 mb-16">
-          <h3 className="text-3xl font-semibold mb-8 text-center">Почему выбирают нас</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 mb-4 bg-blue-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">A</span>
-              </div>
-              <p className="text-xl font-semibold text-center">Большой ассортимент книг</p>
-              <p className="text-gray-600 text-center mt-2">
-                У нас вы найдете книги на любой вкус и предпочтения.
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 mb-4 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">D</span>
-              </div>
-              <p className="text-xl font-semibold text-center">Быстрая доставка</p>
-              <p className="text-gray-600 text-center mt-2">
-                Доставляем заказы в кратчайшие сроки по всей стране.
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-16 h-16 mb-4 bg-yellow-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">₽</span>
-              </div>
-              <p className="text-xl font-semibold text-center">Выгодные цены</p>
-              <p className="text-gray-600 text-center mt-2">
-                Предлагаем лучшие цены и специальные предложения.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-blue-50 p-8 rounded-lg">
-          <h3 className="text-3xl font-semibold mb-4 text-center">Подпишитесь на нашу рассылку</h3>
-          <p className="text-center mb-6">
-            Получайте самые свежие новости и специальные предложения!
-          </p>
-          <form className="flex flex-col items-center">
-            <input
-              type="email"
-              placeholder="Введите ваш email"
-              className="border p-2 w-full md:w-1/2 mb-4"
+      <main className="p-8 space-y-16">
+        {/* Карточка книги 1: Изображение слева, описание справа */}
+        <section className="flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 flex justify-center mb-4 md:mb-0">
+            <img
+              src="/images/book1.jpg"
+              alt="Tell Me Your Life Story, Dad"
+              className="w-64 h-64 object-contain"
             />
-            <button type="submit" className="px-6 py-2 rounded" style={styles.button}>
-              Подписаться
+          </div>
+          <div className="md:w-1/2 md:pl-8 text-center md:text-left">
+            <h4 className="text-xl font-bold mb-2">Tell Me Your Life Story, Dad</h4>
+            <p className="text-gray-600 mb-4">Автор: Questions About Me</p>
+            <p className="text-gray-700 mb-4">
+              Книга, которая поможет лучше узнать историю вашего отца через интересные вопросы и
+              воспоминания.
+            </p>
+            <button className="px-4 py-2 rounded" style={styles.button}>
+              Купить
             </button>
-          </form>
+          </div>
+        </section>
+
+        {/* Карточка книги 2: Изображение справа, описание слева */}
+        <section className="flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 md:order-2 flex justify-center mb-4 md:mb-0">
+            <img
+              src="/images/book2.jpg"
+              alt="Trump: The Art of the Deal"
+              className="w-64 h-64 object-contain"
+            />
+          </div>
+          <div className="md:w-1/2 md:pr-8 text-center md:text-left md:order-1">
+            <h4 className="text-xl font-bold mb-2">Trump: The Art of the Deal</h4>
+            <p className="text-gray-600 mb-4">Автор: Donald J. Trump</p>
+            <p className="text-gray-700 mb-4">
+              Классическая книга о стратегиях ведения бизнеса, переговорах и поиске выгодных сделок.
+            </p>
+            <button className="px-4 py-2 rounded" style={styles.button}>
+              Купить
+            </button>
+          </div>
+        </section>
+
+        {/* Карточка книги 3: Изображение слева, описание справа */}
+        <section className="flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 flex justify-center mb-4 md:mb-0">
+            <img
+              src="/images/book3.jpg"
+              alt="Maybe You Should Talk to Someone"
+              className="w-64 h-64 object-contain"
+            />
+          </div>
+          <div className="md:w-1/2 md:pl-8 text-center md:text-left">
+            <h4 className="text-xl font-bold mb-2">Maybe You Should Talk to Someone</h4>
+            <p className="text-gray-600 mb-4">Автор: Lori Gottlieb</p>
+            <p className="text-gray-700 mb-4">
+              Вдохновляющая книга о человеческой природе, эмоциях и необходимости разговора с
+              терапевтом, чтобы понять себя глубже.
+            </p>
+            <button className="px-4 py-2 rounded" style={styles.button}>
+              Купить
+            </button>
+          </div>
         </section>
       </main>
 
