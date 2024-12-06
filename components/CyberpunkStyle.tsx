@@ -4,7 +4,7 @@ import React from 'react';
 const CyberpunkStyle: React.FC = () => {
   return (
     <div className="mb-12">
-      <h2 className="text-2xl font-semibold mb-4 text-center text-neon-pink glitch">
+      <h2 className="text-2xl font-semibold mb-4 text-center text-neon-pink">
         Исследование стиля "Киберпанк"
       </h2>
       <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
