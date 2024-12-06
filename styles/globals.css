@@ -50,49 +50,52 @@ button:focus {
 }
 
 /* Glitch effect */
+/* Делаем небольшие сдвиги, чтобы эффект был заметен и на однострочных заголовках. */
+/* Уменьшаем размеры clip и используем небольшие px, чтобы эффект размещался в пределах одной строки. */
+
 @keyframes glitch {
   0% {
-    clip: rect(0, 9999px, 0.7em, 0);
+    clip: rect(0, 200px, 1em, 0);
     transform: skew(0.5deg);
   }
   10% {
-    clip: rect(0.1em, 9999px, 0.6em, 0);
+    clip: rect(0.1em, 200px, 0.9em, 0);
     transform: skew(0.5deg);
   }
   20% {
-    clip: rect(0.2em, 9999px, 0.8em, 0);
-    transform: skew(0.5deg);
+    clip: rect(0.2em, 200px, 0.8em, 0);
+    transform: skew(0.5deg) translateX(-1px);
   }
   30% {
-    clip: rect(0.05em, 9999px, 0.75em, 0);
+    clip: rect(0.05em, 200px, 0.7em, 0);
     transform: skew(0.5deg);
   }
   40% {
-    clip: rect(0.15em, 9999px, 0.9em, 0);
-    transform: skew(0.5deg);
+    clip: rect(0.15em, 200px, 0.95em, 0);
+    transform: skew(0.5deg) translateX(1px);
   }
   50% {
-    clip: rect(0em, 9999px, 0.8em, 0);
+    clip: rect(0em, 200px, 0.85em, 0);
     transform: skew(0.5deg);
   }
   60% {
-    clip: rect(0.2em, 9999px, 0.85em, 0);
-    transform: skew(0.5deg);
+    clip: rect(0.2em, 200px, 0.9em, 0);
+    transform: skew(0.5deg) translateX(-1px);
   }
   70% {
-    clip: rect(0.1em, 9999px, 0.5em, 0);
+    clip: rect(0.1em, 200px, 0.6em, 0);
     transform: skew(0.5deg);
   }
   80% {
-    clip: rect(0.05em, 9999px, 0.9em, 0);
-    transform: skew(0.5deg);
+    clip: rect(0.05em, 200px, 0.9em, 0);
+    transform: skew(0.5deg) translateX(1px);
   }
   90% {
-    clip: rect(0.1em, 9999px, 0.7em, 0);
+    clip: rect(0.1em, 200px, 0.7em, 0);
     transform: skew(0.5deg);
   }
   100% {
-    clip: rect(0.15em, 9999px, 0.8em, 0);
+    clip: rect(0.15em, 200px, 0.8em, 0);
     transform: skew(0.5deg);
   }
 }
@@ -100,8 +103,8 @@ button:focus {
 .glitch {
   position: relative;
   display: inline-block;
-  line-height: 1.2;
-  white-space: nowrap;
+  line-height: 1em;
+  overflow: hidden;
   color: #fff;
   animation: glitch 1s infinite;
 }
@@ -111,13 +114,16 @@ button:focus {
   content: attr(data-text);
   position: absolute;
   left: 0;
-  color: #F2E205; /* Желтый цвет для эффекта глюка */
+  top: 0;
+  color: #F2E205;
+  animation: glitch 1s infinite;
 }
 
+/* Сдвигаем псевдоэлементы немного в сторону для эффекта смещения */
 .glitch::before {
-  animation: glitch 1s infinite;
+  transform: translateX(-1px);
 }
 
 .glitch::after {
-  animation: glitch 1s infinite;
+  transform: translateX(1px);
 }
