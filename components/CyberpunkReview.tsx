@@ -32,7 +32,7 @@ const CyberpunkReview: React.FC = () => {
 
   return (
     <div className="bg-dark-900 text-gray-300 relative" style={{
-      backgroundImage: 'url(/images/cyberpunk/review/scene2.jpg)',
+      backgroundImage: 'url(/images/cyberpunk/review/bg.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed'
