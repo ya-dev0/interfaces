@@ -56,39 +56,39 @@ button:focus {
   }
   10% {
     clip: rect(0.1em, 200px, 0.9em, 0);
-    transform: skew(0.5deg) translate(-2px, 1px);
+    transform: skew(0.5deg) translate(-4px, 2px);
   }
   20% {
     clip: rect(0.2em, 200px, 0.8em, 0);
-    transform: skew(0.5deg) translate(1px, -2px);
+    transform: skew(0.5deg) translate(3px, -4px);
   }
   30% {
     clip: rect(0.05em, 200px, 0.7em, 0);
-    transform: skew(0.5deg) translate(-1px, 0);
+    transform: skew(0.5deg) translate(-3px, 1px);
   }
   40% {
     clip: rect(0.15em, 200px, 0.95em, 0);
-    transform: skew(0.5deg) translate(2px, 1px);
+    transform: skew(0.5deg) translate(5px, 3px);
   }
   50% {
     clip: rect(0em, 200px, 0.85em, 0);
-    transform: skew(0.5deg) translate(-2px, -1px);
+    transform: skew(0.5deg) translate(-5px, -3px);
   }
   60% {
     clip: rect(0.2em, 200px, 0.9em, 0);
-    transform: skew(0.5deg) translate(1px, 1px);
+    transform: skew(0.5deg) translate(3px, 3px);
   }
   70% {
     clip: rect(0.1em, 200px, 0.6em, 0);
-    transform: skew(0.5deg) translate(-1px, -2px);
+    transform: skew(0.5deg) translate(-4px, -4px);
   }
   80% {
     clip: rect(0.05em, 200px, 0.9em, 0);
-    transform: skew(0.5deg) translate(2px, 0);
+    transform: skew(0.5deg) translate(4px, 2px);
   }
   90% {
     clip: rect(0.1em, 200px, 0.7em, 0);
-    transform: skew(0.5deg) translate(-2px, 1px);
+    transform: skew(0.5deg) translate(-5px, 3px);
   }
   100% {
     clip: rect(0.15em, 200px, 0.8em, 0);
@@ -101,7 +101,7 @@ button:focus {
   display: inline-block;
   line-height: 1em;
   overflow: hidden;
-  color: #F2E205; /* Основной текст – жёлтый */
+  color: #fff; /* Основной текст – белый */
   animation: glitch 1.5s infinite;
 }
 
@@ -111,18 +111,18 @@ button:focus {
   position: absolute;
   left: 0;
   top: 0;
-  color: #F2E205;
+  color: #F2E205; /* Жёлтый цвет для эффекта */
   animation: glitch 1.5s infinite;
-  opacity: 0.8; /* Лёгкая прозрачность для эффекта наложения */
+  opacity: 0.9; /* Лёгкая прозрачность для псевдоэлементов */
 }
 
-/* Сдвигаем псевдоэлементы по диагонали для красивого смещения */
+/* Увеличенный сдвиг псевдоэлементов для более заметного эффекта */
 .glitch::before {
-  transform: translate(-2px, -2px);
+  transform: translate(-6px, -6px);
   clip: rect(0.1em, 200px, 0.9em, 0);
 }
 
 .glitch::after {
-  transform: translate(2px, 2px);
+  transform: translate(6px, 6px);
   clip: rect(0.15em, 200px, 0.8em, 0);
 }
