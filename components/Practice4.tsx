@@ -5,7 +5,7 @@ import CyberpunkReview from './CyberpunkReview';
 const Practice4: React.FC = () => {
   return (
     <div className="min-h-screen bg-dark-900 text-gray-300" style={{
-      backgroundImage: 'url(/images/cyberpunk/style-analysis/tech.jpg)',
+      backgroundImage: 'url(/images/cyberpunk/review/bg.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }}>
