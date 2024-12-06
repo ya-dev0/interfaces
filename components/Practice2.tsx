@@ -6,6 +6,14 @@ const Practice2: React.FC = () => {
     color: '#fff',
   };
 
+  // Стили для фигур
+  // Квадрат (синий):
+  const squareClass = "w-8 h-8 border-2 border-blue-500";
+  // Треугольник (зелёный): используем бордеры для формирования треугольника
+  const triangleClass = "w-0 h-0 border-l-4 border-r-4 border-l-transparent border-r-transparent border-b-8 border-b-green-500";
+  // Круг (желтый)
+  const circleClass = "w-8 h-8 border-2 border-yellow-500 rounded-full";
+
   return (
     <div className="min-h-screen bg-ecf0f1" style={{ backgroundColor: '#ecf0f1' }}>
       <header
@@ -26,14 +34,14 @@ const Practice2: React.FC = () => {
       <main className="p-8 space-y-16 max-w-4xl mx-auto">
         {/* Книга 1 */}
         <section className="flex flex-col md:flex-row items-start md:items-center md:space-x-8">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 mx-auto md:mx-0 mb-4 md:mb-0">
             <img
               src="/images/book1.jpg"
               alt="Tell Me Your Life Story, Dad"
-              className="w-48 h-48 object-contain mx-auto md:mx-0"
+              className="w-48 h-48 object-contain"
             />
           </div>
-          <div className="flex-1 text-center md:text-left max-w-md">
+          <div className="flex-1 text-center md:text-left max-w-md mx-auto">
             <h4 className="text-xl font-bold mb-2">Tell Me Your Life Story, Dad</h4>
             <p className="text-gray-600 mb-4">Автор: Questions About Me</p>
             <p className="text-gray-700 mb-4">
@@ -47,7 +55,7 @@ const Practice2: React.FC = () => {
 
         {/* Книга 2 (Изображение справа) */}
         <section className="flex flex-col md:flex-row items-start md:items-center md:space-x-8">
-          <div className="flex-1 text-center md:text-left md:order-1 md:pr-8 max-w-md">
+          <div className="flex-1 text-center md:text-left md:pr-8 order-2 md:order-1 max-w-md mx-auto">
             <h4 className="text-xl font-bold mb-2">Trump: The Art of the Deal</h4>
             <p className="text-gray-600 mb-4">Автор: Donald J. Trump</p>
             <p className="text-gray-700 mb-4">
@@ -57,25 +65,25 @@ const Practice2: React.FC = () => {
               Купить
             </button>
           </div>
-          <div className="flex-shrink-0 md:order-2">
+          <div className="flex-shrink-0 order-1 md:order-2 mx-auto md:mx-0 mb-4 md:mb-0">
             <img
               src="/images/book2.jpg"
               alt="Trump: The Art of the Deal"
-              className="w-48 h-48 object-contain mx-auto md:mx-0"
+              className="w-48 h-48 object-contain"
             />
           </div>
         </section>
 
         {/* Книга 3 */}
         <section className="flex flex-col md:flex-row items-start md:items-center md:space-x-8">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 mx-auto md:mx-0 mb-4 md:mb-0">
             <img
               src="/images/book3.jpg"
               alt="Maybe You Should Talk to Someone"
-              className="w-48 h-48 object-contain mx-auto md:mx-0"
+              className="w-48 h-48 object-contain"
             />
           </div>
-          <div className="flex-1 text-center md:text-left max-w-md">
+          <div className="flex-1 text-center md:text-left max-w-md mx-auto">
             <h4 className="text-xl font-bold mb-2">Maybe You Should Talk to Someone</h4>
             <p className="text-gray-600 mb-4">Автор: Lori Gottlieb</p>
             <p className="text-gray-700 mb-4">
@@ -105,32 +113,26 @@ const Practice2: React.FC = () => {
           </form>
         </section>
 
-        {/* Почему выбирают нас (внизу) */}
+        {/* Почему выбирают нас */}
         <section className="bg-gray-100 p-8 rounded-lg">
           <h3 className="text-3xl font-semibold mb-8 text-center">Почему выбирают нас</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 mb-4 bg-blue-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">A</span>
-              </div>
+              <div className={`${squareClass} mb-4`}></div>
               <p className="text-xl font-semibold text-center">Большой ассортимент книг</p>
               <p className="text-gray-600 text-center mt-2">
                 Разнообразие жанров и авторов.
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 mb-4 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">D</span>
-              </div>
+              <div className={`${triangleClass} mb-4`}></div>
               <p className="text-xl font-semibold text-center">Быстрая доставка</p>
               <p className="text-gray-600 text-center mt-2">
-                Заказ приедет к вам максимально быстро.
+                Заказ придёт максимально оперативно.
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 mb-4 bg-yellow-500 rounded-full flex items-center justify-center">
-                <span className="text-white text-2xl font-bold">₽</span>
-              </div>
+              <div className={`${circleClass} mb-4`}></div>
               <p className="text-xl font-semibold text-center">Выгодные цены</p>
               <p className="text-gray-600 text-center mt-2">
                 Частые акции и скидки.
