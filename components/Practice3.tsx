@@ -116,11 +116,10 @@ const Practice3: React.FC = () => {
           </section>
         </main>
 
-        {/* Краткое описание магазина внизу */}
         <section className="p-8 bg-white">
           <h3 className="text-2xl font-semibold mb-4 text-center text-pink-800">Наш магазин</h3>
           <p className="text-center text-gray-700 max-w-2xl mx-auto">
-            Мы стремимся привнести вкус и дух Японии в ваш дом. В нашем магазине вы найдёте оригинальные сладости, которые позволят вам почувствовать атмосферу Страны восходящего солнца.
+            Мы стремимся привнести вкус и дух Японии в ваш дом...
           </p>
         </section>
 
