@@ -2,10 +2,11 @@
 import React, { useState } from 'react';
 
 interface SiteBurgerProps {
+  onHomeClick?: () => void;
   onApplyClick?: () => void;
 }
 
-const SiteBurgerMenu: React.FC<SiteBurgerProps> = ({ onApplyClick }) => {
+const SiteBurgerMenu: React.FC<SiteBurgerProps> = ({ onHomeClick, onApplyClick }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -26,7 +27,12 @@ const SiteBurgerMenu: React.FC<SiteBurgerProps> = ({ onApplyClick }) => {
 
         {/* Десктопное меню */}
         <ul className="hidden md:flex space-x-8 text-gray-700">
-          <li className="hover:text-blue-600 cursor-pointer">О конкурсе</li>
+          <li
+            className="hover:text-blue-600 cursor-pointer"
+            onClick={onHomeClick}
+          >
+            Главная
+          </li>
           <li className="hover:text-blue-600 cursor-pointer">Спонсоры</li>
           <li className="hover:text-blue-600 cursor-pointer">Правила</li>
           <li
@@ -42,12 +48,27 @@ const SiteBurgerMenu: React.FC<SiteBurgerProps> = ({ onApplyClick }) => {
       {open && (
         <div className="md:hidden bg-white shadow border-t border-gray-200">
           <ul className="flex flex-col text-gray-700">
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">О конкурсе</li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Спонсоры</li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Правила</li>
             <li
               className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-              onClick={onApplyClick}
+              onClick={() => {
+                setOpen(false);
+                onHomeClick && onHomeClick();
+              }}
+            >
+              Главная
+            </li>
+            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+              Спонсоры
+            </li>
+            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+              Правила
+            </li>
+            <li
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => {
+                setOpen(false);
+                onApplyClick && onApplyClick();
+              }}
             >
               Подать заявку
             </li>
