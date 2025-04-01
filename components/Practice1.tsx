@@ -16,7 +16,6 @@ const Practice1: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Бургер-меню, передаём коллбеки */}
       <SiteBurgerMenu
         onHomeClick={handleHomeClick}
         onApplyClick={handleApplyClick}
@@ -43,64 +42,67 @@ const Practice1: React.FC = () => {
 
       {/* Content */}
       <main className="flex-1 w-full max-w-5xl mx-auto p-6">
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4">О конкурсе</h2>
-          <div className="flex flex-col md:flex-row md:space-x-6">
-            <img
-              src="/images/contest/about.jpg"
-              alt="Иллюстрация о дизайне"
-              className="w-full md:w-1/2 h-64 object-cover rounded mb-4 md:mb-0"
-            />
-            <div className="md:w-1/2">
-              <p className="mb-4">
-                «Creative Edge» — это платформа для креативных людей, где каждый может представить 
-                свою работу и выиграть гранты на реализацию своих идей.
-              </p>
-              <p>
-                Победители получат призы от наших партнёров, а также возможность стажировки в ведущих дизайн-студиях.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* Если showForm = false, показываем разделы "О конкурсе", "Спонсоры", "Как подать заявку".
+            Иначе показываем только форму (до футера). */}
+        {!showForm ? (
+          <>
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold mb-4">О конкурсе</h2>
+              <div className="flex flex-col md:flex-row md:space-x-6">
+                <img
+                  src="/images/contest/about.jpg"
+                  alt="Иллюстрация о дизайне"
+                  className="w-full md:w-1/2 h-64 object-cover rounded mb-4 md:mb-0"
+                />
+                <div className="md:w-1/2">
+                  <p className="mb-4">
+                    «Creative Edge» — это платформа для креативных людей, где каждый может представить 
+                    свою работу и выиграть гранты на реализацию своих идей.
+                  </p>
+                  <p>
+                    Победители получат призы от наших партнёров, а также возможность стажировки в ведущих дизайн-студиях.
+                  </p>
+                </div>
+              </div>
+            </section>
 
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4">Спонсоры и партнёры</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center">
-            <img
-              src="/images/contest/sponsor1.jpg"
-              alt="Логотип спонсора 1"
-              className="w-full h-auto object-contain hover:opacity-80 cursor-pointer"
-            />
-            <img
-              src="/images/contest/sponsor2.jpg"
-              alt="Логотип спонсора 2"
-              className="w-full h-auto object-contain hover:opacity-80 cursor-pointer"
-            />
-            <img
-              src="/images/contest/sponsor3.jpg"
-              alt="Логотип спонсора 3"
-              className="w-full h-auto object-contain hover:opacity-80 cursor-pointer"
-            />
-          </div>
-        </section>
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold mb-4">Спонсоры и партнёры</h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center">
+                <img
+                  src="/images/contest/sponsor1.jpg"
+                  alt="Логотип спонсора 1"
+                  className="w-full h-auto object-contain hover:opacity-80 cursor-pointer"
+                />
+                <img
+                  src="/images/contest/sponsor2.jpg"
+                  alt="Логотип спонсора 2"
+                  className="w-full h-auto object-contain hover:opacity-80 cursor-pointer"
+                />
+                <img
+                  src="/images/contest/sponsor3.jpg"
+                  alt="Логотип спонсора 3"
+                  className="w-full h-auto object-contain hover:opacity-80 cursor-pointer"
+                />
+              </div>
+            </section>
 
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-4">Как подать заявку</h2>
-          <ol className="list-decimal list-inside space-y-2">
-            <li>Нажмите «Подать заявку» (в меню или на баннере)</li>
-            <li>Заполните форму внизу страницы</li>
-            <li>Отправьте заявку и ждите письма о результатах</li>
-          </ol>
-          <button
-            className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-            onClick={handleApplyClick}
-          >
-            Подать заявку
-          </button>
-        </section>
-
-        {/* Если showForm = true, рендерим форму */}
-        {showForm && (
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold mb-4">Как подать заявку</h2>
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Нажмите «Подать заявку» (в меню или в Hero)</li>
+                <li>Заполните необходимые поля</li>
+                <li>Отправьте заявку и ждите письма о результатах</li>
+              </ol>
+              <button
+                className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                onClick={handleApplyClick}
+              >
+                Подать заявку
+              </button>
+            </section>
+          </>
+        ) : (
           <ApplicationForm onClose={() => setShowForm(false)} />
         )}
       </main>
