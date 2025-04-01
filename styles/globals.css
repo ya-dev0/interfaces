@@ -13,43 +13,19 @@ button:focus {
   outline: none;
 }
 
-/* Дополнительные цвета и стили, если необходимо */
+/* Дополнительные цвета и стили */
 @layer utilities {
-  .bg-pink-200 {
-    background-color: #FFC0CB;
-  }
-  .text-pink-800 {
-    color: #b03060;
-  }
-  .bg-pink-500 {
-    background-color: #FF69B4;
-  }
-  .bg-dark-900 {
-    background-color: #0d0d0d;
-  }
-  .bg-dark-800 {
-    background-color: #1a1a1a;
-  }
-  .text-neon-pink {
-    color: #ff0099;
-  }
-  .text-neon-blue {
-    color: #00ffff;
-  }
-  .bg-neon-pink {
-    background-color: #ff0099;
-  }
-  .bg-neon-pink-hover {
-    background-color: #cc007a;
-  }
-  .bg-yellow-500 {
-    background-color: #F2E205;
-  }
-  .bg-yellow-600 {
-    background-color: #d1bb04;
-  }
+  .bg-pink-200 { background-color: #FFC0CB; }
+  .text-pink-800 { color: #b03060; }
+  .bg-pink-500 { background-color: #FF69B4; }
+  .bg-dark-900 { background-color: #0d0d0d; }
+  .bg-dark-800 { background-color: #1a1a1a; }
+  .text-neon-pink { color: #ff0099; }
+  .text-neon-blue { color: #00ffff; }
+  .bg-neon-pink { background-color: #ff0099; }
+  .bg-neon-pink-hover { background-color: #cc007a; }
+  .bg-yellow-500 { background-color: #F2E205; }
+  .bg-yellow-600 { background-color: #d1bb04; }
 }
 
-/* Убрали эффекты глюка полностью для упрощения 
-   или оставили только если нужно. 
-   Здесь - полностью убираем. */
+/* Убрали эффекты глюка и прочие анимации */
