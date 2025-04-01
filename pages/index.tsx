@@ -11,9 +11,7 @@ const IndexPage: React.FC = () => {
 
   return (
     <div className="min-h-screen relative">
-      {/* Небольшая «точка» в правом верхнем углу для переключения практик */}
       <PracticesDotMenu currentTab={currentTab} onChangeTab={(tab) => setCurrentTab(tab)} />
-
       {currentTab === 'practice1' && <Practice1 />}
       {currentTab === 'practice2' && <Practice2 />}
       {currentTab === 'practice3' && <Practice3 />}
