@@ -3,10 +3,8 @@ import React, { useState } from 'react';
 import CompetitionsDesktop from './CompetitionsDesktop';
 import ApplicationForm from './ApplicationForm';
 import CompetitionsMobile from './CompetitionsMobile';
-import TzBrief from './TzBrief';
 
 const Practice4: React.FC = () => {
-  // Выбираем либо Desktop (Главная), Desktop (Форма), либо Mobile
   const [page, setPage] = useState<'desktopHome'|'desktopForm'|'mobile'>('desktopHome');
 
   const handleSwitchPage = (p: 'desktopHome'|'desktopForm'|'mobile') => {
@@ -15,12 +13,10 @@ const Practice4: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-gray-800 p-4">
-      <h1 className="text-3xl font-bold mb-6 text-center glitch" data-text="Конкурсы, гранты для дизайнеров">
+      <h1 className="text-3xl font-bold mb-6 text-center">
         Конкурсы, гранты для дизайнеров
       </h1>
-      <TzBrief />
 
-      {/* Кнопки навигации */}
       <div className="flex justify-center space-x-4 mb-6">
         <button
           onClick={() => handleSwitchPage('desktopHome')}
@@ -43,7 +39,9 @@ const Practice4: React.FC = () => {
       </div>
 
       {page === 'desktopHome' && <CompetitionsDesktop />}
-      {page === 'desktopForm' && <ApplicationForm />}
+      {page === 'desktopForm' && (
+        <ApplicationForm onClose={() => handleSwitchPage('desktopHome')} />
+      )}
       {page === 'mobile' && <CompetitionsMobile />}
     </div>
   );
