@@ -1,3 +1,4 @@
+// components/BurgerMenu.tsx
 import React, { useState } from 'react';
 
 interface BurgerMenuProps {
@@ -7,9 +8,7 @@ interface BurgerMenuProps {
 const BurgerMenu: React.FC<BurgerMenuProps> = ({ onTabChange }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const handleMenuClick = () => {
-    setIsOpen(!isOpen);
-  };
+  const handleMenuClick = () => setIsOpen(!isOpen);
 
   const handleTabClick = (tab: string) => {
     onTabChange(tab);
