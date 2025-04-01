@@ -1,7 +1,11 @@
 // components/SiteBurgerMenu.tsx
 import React, { useState } from 'react';
 
-const SiteBurgerMenu: React.FC = () => {
+interface SiteBurgerProps {
+  onApplyClick?: () => void;
+}
+
+const SiteBurgerMenu: React.FC<SiteBurgerProps> = ({ onApplyClick }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -20,11 +24,17 @@ const SiteBurgerMenu: React.FC = () => {
           </div>
         </button>
 
+        {/* Десктопное меню */}
         <ul className="hidden md:flex space-x-8 text-gray-700">
           <li className="hover:text-blue-600 cursor-pointer">О конкурсе</li>
           <li className="hover:text-blue-600 cursor-pointer">Спонсоры</li>
           <li className="hover:text-blue-600 cursor-pointer">Правила</li>
-          <li className="hover:text-blue-600 cursor-pointer">Подать заявку</li>
+          <li
+            className="hover:text-blue-600 cursor-pointer"
+            onClick={onApplyClick}
+          >
+            Подать заявку
+          </li>
         </ul>
       </div>
 
@@ -35,7 +45,12 @@ const SiteBurgerMenu: React.FC = () => {
             <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">О конкурсе</li>
             <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Спонсоры</li>
             <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Правила</li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Подать заявку</li>
+            <li
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={onApplyClick}
+            >
+              Подать заявку
+            </li>
           </ul>
         </div>
       )}
