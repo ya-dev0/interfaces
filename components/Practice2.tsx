@@ -4,134 +4,156 @@ import React from 'react';
 const Practice2: React.FC = () => {
   return (
     <div className="p-6 max-w-5xl mx-auto text-gray-800">
-      <h1 className="text-3xl font-bold mb-6">UI Kit: Приложение в стиле кейфижуал</h1>
+      <h1 className="text-3xl font-bold mb-6">
+        UI Kit для интернет-магазина аксессуаров <span className="text-sm text-gray-500">("Grey Stone")</span>
+      </h1>
 
-      {/* Цветовая палитра */}
+      {/* 1. Мудборд */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Цветовая палитра</h2>
+        <h2 className="text-2xl font-semibold mb-4">1. Мудборд</h2>
+        <div className="w-full overflow-hidden rounded shadow-md">
+          <img
+            src="/accessories/moodboard.jpg"
+            alt="Мудборд, отражающий стиль магазина аксессуаров"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+        <p className="text-sm mt-2 text-gray-600">
+          Коллаж из фотографий, отражающих настроение бренда: минималистичные формы, 
+          оттенки серого, серебристого и лёгкий акцент на пастельных цветах.
+        </p>
+      </section>
+
+      {/* 2. Цветовая палитра */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">2. Цветовая палитра</h2>
         <div className="flex space-x-4">
-          <ColorBlock color="#4680FF" name="Primary" />
-          <ColorBlock color="#F2E205" name="Warning" />
-          <ColorBlock color="#10B981" name="Success" />
-          <ColorBlock color="#FF5555" name="Danger" />
-          <ColorBlock color="#6B7280" name="Secondary / Text" />
+          <ColorBlock color="#222222" name="Primary (Dark Gray)" />
+          <ColorBlock color="#F2F2F2" name="Background (Light Gray)" />
+          <ColorBlock color="#FFBEDD" name="Accent (Pinkish)" />
+          <ColorBlock color="#FFD700" name="Accent (Gold)" />
+          <ColorBlock color="#D32F2F" name="Danger" />
         </div>
+        <p className="text-sm mt-2 text-gray-600">
+          Основные цвета — разные оттенки серого для фона и текстов, 
+          акценты: розоватый и золотой для выделения важных элементов (например, кнопок).
+        </p>
       </section>
 
-      {/* Типографика */}
+      {/* 3. Шрифты */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Типографика</h2>
+        <h2 className="text-2xl font-semibold mb-4">3. Шрифты</h2>
         <div className="space-y-2">
-          <p className="text-4xl font-bold">Заголовок H1 (text-4xl, font-bold)</p>
-          <p className="text-2xl font-semibold">Заголовок H2 (text-2xl, font-semibold)</p>
-          <p className="text-xl font-semibold">Заголовок H3 (text-xl, font-semibold)</p>
-          <p className="text-base">Обычный текст (text-base)</p>
-          <p className="text-sm">Подсказка или служебный текст (text-sm)</p>
-          <a className="text-blue-500 hover:underline" href="#">
-            Ссылка (text-blue-500)
-          </a>
+          <p className="text-xl font-bold">Заголовок H2 (Montserrat Bold, 24px)</p>
+          <p className="text-base">
+            Обычный текст (Montserrat Regular, 16px) – описание товаров, карточки, параграфы.
+          </p>
+          <p className="text-sm text-gray-600">
+            Подсказки и вторичный текст (Montserrat Light, 14px).
+          </p>
+          <p className="text-base italic">
+            Подзаголовки или цитаты (Montserrat Italic, 16px).
+          </p>
         </div>
       </section>
 
-      {/* Кнопки */}
+      {/* 4. Логотип */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Кнопки</h2>
-        <div className="flex flex-wrap gap-4">
-          <button className="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600">
-            Primary
-          </button>
-          <button className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-700">
-            Secondary
-          </button>
-          <button className="px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600">
-            Success
-          </button>
-          <button className="px-4 py-2 rounded bg-yellow-500 text-dark-900 hover:bg-yellow-600">
-            Warning
-          </button>
-          <button className="px-4 py-2 rounded bg-red-500 text-white hover:bg-red-600">
-            Danger
-          </button>
-          <button className="px-4 py-2 rounded bg-gray-300 text-gray-600 cursor-not-allowed">
-            Disabled
-          </button>
-        </div>
-      </section>
-
-      {/* Поля ввода */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Поля ввода</h2>
-        <div className="space-y-4 max-w-sm">
+        <h2 className="text-2xl font-semibold mb-4">4. Логотип</h2>
+        <div className="flex flex-wrap items-center space-x-8">
           <div>
-            <label className="block mb-1 font-bold text-sm">E-mail</label>
-            <input
-              type="email"
-              className="border w-full p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
-              placeholder="example@mail.com"
+            <img
+              src="/accessories/brand_logo.png"
+              alt="Логотип бренда (цветной)"
+              className="h-16 mb-2"
             />
+            <p className="text-sm text-gray-600">Цветной вариант</p>
           </div>
           <div>
-            <label className="block mb-1 font-bold text-sm">Пароль</label>
-            <input
-              type="password"
-              className="border w-full p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
-              placeholder="******"
+            <img
+              src="/accessories/brand_logo_mono.png"
+              alt="Логотип бренда (моно)"
+              className="h-16 mb-2 bg-gray-200 p-2 rounded"
             />
-          </div>
-          <div>
-            <label className="block mb-1 font-bold text-sm">Телефон (маска)</label>
-            <input
-              type="tel"
-              className="border w-full p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
-              placeholder="+7 (___) ___-__-__"
-            />
-          </div>
-          <div>
-            <label className="block mb-1 font-bold text-sm">Сообщение (textarea)</label>
-            <textarea
-              className="border w-full p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
-              placeholder="Введите ваше сообщение..."
-              rows={3}
-            />
+            <p className="text-sm text-gray-600">Монохром</p>
           </div>
         </div>
       </section>
 
-      {/* Тумблеры / Переключатели */}
+      {/* 5. Фотостиль */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Переключатели (Toggle)</h2>
-        <div className="flex items-center space-x-8">
-          <Toggle label="Светлая тема" />
-          <Toggle label="Уведомления" defaultChecked />
+        <h2 className="text-2xl font-semibold mb-4">5. Фото и обработка</h2>
+        <p className="mb-4">
+          Для фотографий товаров используем мягкий свет и нейтральный фон (чаще светлый 
+          или слегка сероватый), чтобы акцент был на самом аксессуаре. Допустимо применять 
+          лёгкую цветокоррекцию, убирая яркие артефакты.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <img
+            src="/accessories/product1.jpg"
+            alt="Пример фото аксессуара 1"
+            className="w-full h-auto object-cover rounded"
+          />
+          <img
+            src="/accessories/product2.jpg"
+            alt="Пример фото аксессуара 2"
+            className="w-full h-auto object-cover rounded"
+          />
+          <img
+            src="/accessories/product3.jpg"
+            alt="Пример фото аксессуара 3"
+            className="w-full h-auto object-cover rounded"
+          />
         </div>
       </section>
 
-      {/* Списки / Элементы интерфейса */}
+      {/* 6. Сборка элементов (мини-UI Kit) */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Список элементов</h2>
-        <ul className="border rounded-md divide-y divide-gray-200 max-w-sm">
-          <li className="p-4 flex items-center justify-between">
-            <span>Профиль</span>
-            <img src="/images/ui/icon_edit.png" alt="edit" className="w-4 h-4 cursor-pointer" />
-          </li>
-          <li className="p-4 flex items-center justify-between">
-            <span>Настройки</span>
-            <img src="/images/ui/icon_delete.png" alt="delete" className="w-4 h-4 cursor-pointer" />
-          </li>
-          <li className="p-4 flex items-center justify-between">
-            <span>Поиск</span>
-            <img src="/images/ui/icon_search.png" alt="search" className="w-4 h-4 cursor-pointer" />
-          </li>
-        </ul>
-      </section>
+        <h2 className="text-2xl font-semibold mb-4">6. Стили UI и компоненты</h2>
+        <p className="mb-2 text-gray-600">
+          Ниже — примеры основных компонентов, собранные на одном экране:
+        </p>
+        <div className="border p-4 rounded space-y-4">
+          <div className="flex space-x-2">
+            <button className="px-4 py-2 rounded" style={{ backgroundColor: '#222222', color: '#FFF' }}>
+              Тёмная кнопка
+            </button>
+            <button className="px-4 py-2 rounded" style={{ backgroundColor: '#FFBEDD', color: '#222' }}>
+              Розовая кнопка
+            </button>
+            <button className="px-4 py-2 rounded border border-gray-300">
+              Второстепенная
+            </button>
+          </div>
 
-      {/* Пример использования иконки */}
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Пример иконки в кнопке</h2>
-        <button className="px-4 py-2 bg-blue-500 text-white rounded inline-flex items-center space-x-2 hover:bg-blue-600">
-          <img src="/images/ui/icon_search.png" alt="search" className="w-4 h-4" />
-          <span>Найти</span>
-        </button>
+          <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+            <div className="flex-1">
+              <label className="block text-sm font-bold mb-1">Поиск</label>
+              <input
+                type="text"
+                placeholder="Искать..."
+                className="border w-full p-2 rounded"
+              />
+            </div>
+            <div className="flex-1">
+              <label className="block text-sm font-bold mb-1">E-mail</label>
+              <input
+                type="email"
+                placeholder="example@mail.com"
+                className="border w-full p-2 rounded"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-bold mb-1">Выбор варианта</label>
+            <select className="border p-2 rounded w-full">
+              <option>Кольца</option>
+              <option>Подвески</option>
+              <option>Серьги</option>
+            </select>
+          </div>
+        </div>
       </section>
     </div>
   );
@@ -139,44 +161,18 @@ const Practice2: React.FC = () => {
 
 export default Practice2;
 
-/** Вспомогательные компоненты */
+/** Вспомогательный компонент для цвета */
 interface ColorBlockProps {
   color: string;
   name: string;
 }
 const ColorBlock: React.FC<ColorBlockProps> = ({ color, name }) => (
-  <div className="flex flex-col items-center text-sm">
+  <div className="flex flex-col items-center text-center text-sm">
     <div
-      className="w-16 h-16 rounded border border-gray-200 mb-2"
+      className="w-16 h-16 rounded border border-gray-300 mb-2"
       style={{ backgroundColor: color }}
     />
-    <p>{name}</p>
+    <p className="font-semibold">{name}</p>
     <p className="text-gray-500">{color}</p>
   </div>
 );
-
-interface ToggleProps {
-  label: string;
-  defaultChecked?: boolean;
-}
-const Toggle: React.FC<ToggleProps> = ({ label, defaultChecked }) => {
-  const [checked, setChecked] = React.useState<boolean>(!!defaultChecked);
-
-  return (
-    <label className="inline-flex items-center cursor-pointer space-x-2">
-      <span className="text-sm font-semibold">{label}</span>
-      <div
-        className={`relative w-10 h-5 rounded-full transition ${
-          checked ? 'bg-blue-500' : 'bg-gray-300'
-        }`}
-        onClick={() => setChecked(!checked)}
-      >
-        <div
-          className={`absolute w-4 h-4 bg-white rounded-full top-0.5 transition ${
-            checked ? 'left-5' : 'left-1'
-          }`}
-        />
-      </div>
-    </label>
-  );
-};
