@@ -1,132 +1,95 @@
+// components/Practice3.tsx
 import React from 'react';
-import Moodboard from './Moodboard';
-import ColorPalette from './ColorPalette';
+
+const products = [
+  { id: 1, name: 'Серебряное кольцо', price: '1 200 ₽', img: '/accessories/product1.jpg' },
+  { id: 2, name: 'Браслет с камнями', price: '1 900 ₽', img: '/accessories/product2.jpg' },
+  { id: 3, name: 'Золотые серьги', price: '3 500 ₽', img: '/accessories/product3.jpg' },
+  { id: 4, name: 'Минималистичное колье', price: '2 700 ₽', img: '/accessories/product4.jpg' },
+  { id: 5, name: 'Чокер с цепочками', price: '2 300 ₽', img: '/accessories/product5.jpg' },
+  { id: 6, name: 'Подвеска с жемчугом', price: '1 800 ₽', img: '/accessories/product6.jpg' },
+  { id: 7, name: 'Браслет с подвесками', price: '2 100 ₽', img: '/accessories/product7.jpg' },
+  { id: 8, name: 'Серьги-кольца', price: '1 500 ₽', img: '/accessories/product8.jpg' },
+  { id: 9, name: 'Комплект из кольца и серёг', price: '4 000 ₽', img: '/accessories/product9.jpg' },
+];
 
 const Practice3: React.FC = () => {
   return (
-    <div className="min-h-screen bg-pink-200">
-      <section className="p-8 bg-white">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Мудборд</h2>
-        <Moodboard />
-      </section>
-
-      <div className="h-1 bg-gray-300"></div>
-
-      <section className="p-8 bg-white">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Цветовая палитра</h2>
-        <ColorPalette />
-      </section>
-
-      <div className="h-1 bg-gray-300"></div>
-
-      <section>
-        <header className="h-64 flex items-center justify-center">
-          <h1 className="text-5xl font-bold text-pink-800 text-center">Японские сладости</h1>
-        </header>
-
-        <main className="p-8 max-w-4xl mx-auto">
-          <section className="mb-16">
-            <h3 className="text-3xl font-semibold mb-8 text-center text-pink-800">
-              Популярные товары
-            </h3>
-
-            {/* 1-я строка: 2 товара */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              {/* Моти */}
-              <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg max-w-xs mx-auto">
-                <img
-                  src="/images/products/mochi.jpg"
-                  alt="Моти"
-                  className="mb-4 w-32 h-32 object-contain"
-                />
-                <h4 className="text-xl font-bold text-center text-pink-800">Моти</h4>
-                <p className="text-gray-600 text-center">Традиционные рисовые пирожные</p>
-                <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded">В корзину</button>
-              </div>
-
-              {/* KitKat Matcha */}
-              <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg max-w-xs mx-auto">
-                <img
-                  src="/images/products/kitkat-matcha.jpg"
-                  alt="KitKat со вкусом матча"
-                  className="mb-4 w-32 h-32 object-contain"
-                />
-                <h4 className="text-xl font-bold text-center text-pink-800">
-                  KitKat со вкусом матча
-                </h4>
-                <p className="text-gray-600 text-center">Популярный шоколад с зеленым чаем</p>
-                <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded">В корзину</button>
-              </div>
+    <div className="min-h-screen flex flex-col bg-[#F2F2F2] text-gray-800">
+      {/* Шапка */}
+      <header className="bg-white shadow">
+        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <img
+              src="/accessories/brand_logo.jpg"
+              alt="Grey Stone логотип"
+              className="h-10"
+            />
+            <span className="text-xl font-bold">Grey Stone</span>
+          </div>
+          <nav className="hidden md:flex space-x-6 text-base font-semibold">
+            <a href="#" className="hover:text-pink-800">Главная</a>
+            <a href="#" className="hover:text-pink-800">О нас</a>
+            <a href="#" className="hover:text-pink-800">Контакты</a>
+            <a href="#" className="hover:text-pink-800">Корзина</a>
+          </nav>
+          <button className="md:hidden focus:outline-none">
+            <div className="w-6 h-6 flex flex-col justify-between">
+              <span className="block w-full h-0.5 bg-gray-700"></span>
+              <span className="block w-full h-0.5 bg-gray-700"></span>
+              <span className="block w-full h-0.5 bg-gray-700"></span>
             </div>
+          </button>
+        </div>
+      </header>
 
-            {/* 2-я строка: 1 товар (Дораяки, бестселлер) */}
-            <div className="mb-8 relative border p-8 bg-white rounded-lg shadow-lg max-w-md mx-auto">
-              <div className="absolute top-2 right-2 bg-yellow-300 text-black px-2 py-1 text-sm font-semibold uppercase">
-                Бестселлер
-              </div>
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-1/2 flex justify-center mb-4 md:mb-0">
-                  <img
-                    src="/images/products/dorayaki.jpg"
-                    alt="Дораяки"
-                    className="w-48 h-48 object-contain"
-                  />
+      {/* Hero / Баннер */}
+      <div className="relative w-full h-64 bg-black flex items-center justify-center">
+        <img
+          src="/accessories/moodboard.jpg"
+          alt="Баннер"
+          className="w-full h-full object-cover absolute top-0 left-0 opacity-70"
+        />
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Стильные аксессуары</h1>
+          <p className="mb-4 text-sm md:text-base">Создавайте свой уникальный образ с Grey Stone</p>
+          <button className="px-6 py-2 bg-black bg-opacity-80 rounded hover:bg-opacity-90">
+            Перейти к покупкам
+          </button>
+        </div>
+      </div>
+
+      {/* Секция с товарами */}
+      <main className="flex-1 max-w-5xl mx-auto p-6">
+        <h2 className="text-2xl font-bold mb-6">Новые поступления</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {products.map((item) => (
+            <div key={item.id} className="bg-white rounded shadow overflow-hidden flex flex-col">
+              <img
+                src={item.img}
+                alt={item.name}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">{item.name}</h3>
+                  <p className="text-gray-600 mb-2">{item.price}</p>
                 </div>
-                <div className="md:w-1/2 md:pl-8 text-center md:text-left">
-                  <h4 className="text-2xl font-bold mb-2 text-pink-800">Дораяки</h4>
-                  <p className="text-gray-600 mb-4">Панкейки с бобовой пастой</p>
-                  <p className="text-gray-700 mb-4">
-                    Один из самых популярных японских десертов. Нежный бисквит и сладкая бобовая паста анко.
-                  </p>
-                  <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded">В корзину</button>
-                </div>
+                <button className="px-4 py-2 bg-[#222222] text-white rounded hover:opacity-90 mt-2">
+                  В корзину
+                </button>
               </div>
             </div>
+          ))}
+        </div>
+      </main>
 
-            {/* 3-я строка: 2 товара (Тайяки, Pocky) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Тайяки */}
-              <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg max-w-xs mx-auto">
-                <img
-                  src="/images/products/taiyaki.jpg"
-                  alt="Тайяки"
-                  className="mb-4 w-32 h-32 object-contain"
-                />
-                <h4 className="text-xl font-bold text-center text-pink-800">Тайяки</h4>
-                <p className="text-gray-600 text-center">
-                  Рыбовидные пирожки с разными сладкими начинками.
-                </p>
-                <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded">В корзину</button>
-              </div>
-
-              {/* Pocky */}
-              <div className="border p-6 flex flex-col items-center bg-white rounded-lg shadow-lg max-w-xs mx-auto">
-                <img
-                  src="/images/products/pocky.jpg"
-                  alt="Pocky"
-                  className="mb-4 w-32 h-32 object-contain"
-                />
-                <h4 className="text-xl font-bold text-center text-pink-800">Pocky</h4>
-                <p className="text-gray-600 text-center">
-                  Хрустящие палочки в глазури, лёгкий сладкий перекус.
-                </p>
-                <button className="mt-4 px-4 py-2 bg-pink-500 text-white rounded">В корзину</button>
-              </div>
-            </div>
-          </section>
-        </main>
-
-        <section className="p-8 bg-white">
-          <h3 className="text-2xl font-semibold mb-4 text-center text-pink-800">Наш магазин</h3>
-          <p className="text-center text-gray-700 max-w-2xl mx-auto">
-            Мы стремимся привнести вкус и дух Японии в ваш дом...
-          </p>
-        </section>
-
-        <footer className="bg-pink-200 text-pink-800 p-4 mt-16">
-          <p className="text-center">&copy; 2023 Японские сладости. Все права защищены.</p>
-        </footer>
-      </section>
+      {/* Подвал */}
+      <footer className="bg-white text-gray-700 p-4 text-center mt-6">
+        <p className="text-sm">
+          © 2025 Grey Stone – Интернет-магазин аксессуаров
+        </p>
+      </footer>
     </div>
   );
 };
