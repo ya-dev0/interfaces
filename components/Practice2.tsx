@@ -1,152 +1,182 @@
+// components/Practice2.tsx
 import React from 'react';
 
 const Practice2: React.FC = () => {
-  const buttonStyle = {
-    backgroundColor: '#10b981', // Зеленый
-    color: '#fff',
-  };
-
-  // Стили для фигур
-  // Квадрат (синий):
-  const squareClass = "w-8 h-8 border-2 border-blue-500";
-  // Треугольник (зелёный): используем бордеры для формирования треугольника
-  const triangleClass = "w-0 h-0 border-l-4 border-r-4 border-l-transparent border-r-transparent border-b-8 border-b-green-500";
-  // Круг (желтый)
-  const circleClass = "w-8 h-8 border-2 border-yellow-500 rounded-full";
-
   return (
-    <div className="min-h-screen bg-ecf0f1" style={{ backgroundColor: '#ecf0f1' }}>
-      <header
-        className="h-72 flex items-center justify-center"
-        style={{
-          backgroundColor: '#2c3e50',
-          color: '#ecf0f1',
-          backgroundImage: 'url(/images/header-bg.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <h2 className="text-5xl font-bold text-white text-center">
-          Добро пожаловать в наш книжный магазин
-        </h2>
-      </header>
+    <div className="p-6 max-w-5xl mx-auto text-gray-800">
+      <h1 className="text-3xl font-bold mb-6">UI Kit: Приложение в стиле кейфижуал</h1>
 
-      <main className="p-8 space-y-16 max-w-4xl mx-auto">
-        {/* Книга 1 */}
-        <section className="flex flex-col md:flex-row items-start md:items-center md:space-x-8">
-          <div className="flex-shrink-0 mx-auto md:mx-0 mb-4 md:mb-0">
-            <img
-              src="/images/book1.jpg"
-              alt="Tell Me Your Life Story, Dad"
-              className="w-48 h-48 object-contain"
-            />
-          </div>
-          <div className="flex-1 text-center md:text-left max-w-md mx-auto">
-            <h4 className="text-xl font-bold mb-2">Tell Me Your Life Story, Dad</h4>
-            <p className="text-gray-600 mb-4">Автор: Questions About Me</p>
-            <p className="text-gray-700 mb-4">
-              Книга с вопросами, помогающими глубже узнать своего отца, его опыт, воспоминания и ценности.
-            </p>
-            <button className="px-4 py-2 rounded" style={buttonStyle}>
-              Купить
-            </button>
-          </div>
-        </section>
+      {/* Цветовая палитра */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">Цветовая палитра</h2>
+        <div className="flex space-x-4">
+          <ColorBlock color="#4680FF" name="Primary" />
+          <ColorBlock color="#F2E205" name="Warning" />
+          <ColorBlock color="#10B981" name="Success" />
+          <ColorBlock color="#FF5555" name="Danger" />
+          <ColorBlock color="#6B7280" name="Secondary / Text" />
+        </div>
+      </section>
 
-        {/* Книга 2 (Изображение справа) */}
-        <section className="flex flex-col md:flex-row items-start md:items-center md:space-x-8">
-          <div className="flex-1 text-center md:text-left md:pr-8 order-2 md:order-1 max-w-md mx-auto">
-            <h4 className="text-xl font-bold mb-2">Trump: The Art of the Deal</h4>
-            <p className="text-gray-600 mb-4">Автор: Donald J. Trump</p>
-            <p className="text-gray-700 mb-4">
-              Классика деловой литературы о стратегиях переговоров и выгодных сделок.
-            </p>
-            <button className="px-4 py-2 rounded" style={buttonStyle}>
-              Купить
-            </button>
-          </div>
-          <div className="flex-shrink-0 order-1 md:order-2 mx-auto md:mx-0 mb-4 md:mb-0">
-            <img
-              src="/images/book2.jpg"
-              alt="Trump: The Art of the Deal"
-              className="w-48 h-48 object-contain"
-            />
-          </div>
-        </section>
+      {/* Типографика */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">Типографика</h2>
+        <div className="space-y-2">
+          <p className="text-4xl font-bold">Заголовок H1 (text-4xl, font-bold)</p>
+          <p className="text-2xl font-semibold">Заголовок H2 (text-2xl, font-semibold)</p>
+          <p className="text-xl font-semibold">Заголовок H3 (text-xl, font-semibold)</p>
+          <p className="text-base">Обычный текст (text-base)</p>
+          <p className="text-sm">Подсказка или служебный текст (text-sm)</p>
+          <a className="text-blue-500 hover:underline" href="#">
+            Ссылка (text-blue-500)
+          </a>
+        </div>
+      </section>
 
-        {/* Книга 3 */}
-        <section className="flex flex-col md:flex-row items-start md:items-center md:space-x-8">
-          <div className="flex-shrink-0 mx-auto md:mx-0 mb-4 md:mb-0">
-            <img
-              src="/images/book3.jpg"
-              alt="Maybe You Should Talk to Someone"
-              className="w-48 h-48 object-contain"
-            />
-          </div>
-          <div className="flex-1 text-center md:text-left max-w-md mx-auto">
-            <h4 className="text-xl font-bold mb-2">Maybe You Should Talk to Someone</h4>
-            <p className="text-gray-600 mb-4">Автор: Lori Gottlieb</p>
-            <p className="text-gray-700 mb-4">
-              Проникновенная книга о важности психотерапии и самопознания.
-            </p>
-            <button className="px-4 py-2 rounded" style={buttonStyle}>
-              Купить
-            </button>
-          </div>
-        </section>
+      {/* Кнопки */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">Кнопки</h2>
+        <div className="flex flex-wrap gap-4">
+          <button className="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600">
+            Primary
+          </button>
+          <button className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-700">
+            Secondary
+          </button>
+          <button className="px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600">
+            Success
+          </button>
+          <button className="px-4 py-2 rounded bg-yellow-500 text-dark-900 hover:bg-yellow-600">
+            Warning
+          </button>
+          <button className="px-4 py-2 rounded bg-red-500 text-white hover:bg-red-600">
+            Danger
+          </button>
+          <button className="px-4 py-2 rounded bg-gray-300 text-gray-600 cursor-not-allowed">
+            Disabled
+          </button>
+        </div>
+      </section>
 
-        {/* Подписка */}
-        <section className="bg-blue-50 p-8 rounded-lg">
-          <h3 className="text-3xl font-semibold mb-4 text-center">Подпишитесь на нашу рассылку</h3>
-          <p className="text-center mb-6">
-            Получайте самые свежие новости и специальные предложения!
-          </p>
-          <form className="flex flex-col items-center">
+      {/* Поля ввода */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">Поля ввода</h2>
+        <div className="space-y-4 max-w-sm">
+          <div>
+            <label className="block mb-1 font-bold text-sm">E-mail</label>
             <input
               type="email"
-              placeholder="Введите ваш email"
-              className="border p-2 w-full md:w-1/2 mb-4"
+              className="border w-full p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+              placeholder="example@mail.com"
             />
-            <button type="submit" className="px-6 py-2 rounded" style={buttonStyle}>
-              Подписаться
-            </button>
-          </form>
-        </section>
-
-        {/* Почему выбирают нас */}
-        <section className="bg-gray-100 p-8 rounded-lg">
-          <h3 className="text-3xl font-semibold mb-8 text-center">Почему выбирают нас</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center">
-              <div className={`${squareClass} mb-4`}></div>
-              <p className="text-xl font-semibold text-center">Большой ассортимент книг</p>
-              <p className="text-gray-600 text-center mt-2">
-                Разнообразие жанров и авторов.
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className={`${triangleClass} mb-4`}></div>
-              <p className="text-xl font-semibold text-center">Быстрая доставка</p>
-              <p className="text-gray-600 text-center mt-2">
-                Заказ придёт максимально оперативно.
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className={`${circleClass} mb-4`}></div>
-              <p className="text-xl font-semibold text-center">Выгодные цены</p>
-              <p className="text-gray-600 text-center mt-2">
-                Частые акции и скидки.
-              </p>
-            </div>
           </div>
-        </section>
-      </main>
+          <div>
+            <label className="block mb-1 font-bold text-sm">Пароль</label>
+            <input
+              type="password"
+              className="border w-full p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+              placeholder="******"
+            />
+          </div>
+          <div>
+            <label className="block mb-1 font-bold text-sm">Телефон (маска)</label>
+            <input
+              type="tel"
+              className="border w-full p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+              placeholder="+7 (___) ___-__-__"
+            />
+          </div>
+          <div>
+            <label className="block mb-1 font-bold text-sm">Сообщение (textarea)</label>
+            <textarea
+              className="border w-full p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+              placeholder="Введите ваше сообщение..."
+              rows={3}
+            />
+          </div>
+        </div>
+      </section>
 
-      <footer className="bg-gray-800 text-white p-4 mt-16">
-        <p className="text-center">&copy; 2023 Наш книжный магазин. Все права защищены.</p>
-      </footer>
+      {/* Тумблеры / Переключатели */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">Переключатели (Toggle)</h2>
+        <div className="flex items-center space-x-8">
+          <Toggle label="Светлая тема" />
+          <Toggle label="Уведомления" defaultChecked />
+        </div>
+      </section>
+
+      {/* Списки / Элементы интерфейса */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">Список элементов</h2>
+        <ul className="border rounded-md divide-y divide-gray-200 max-w-sm">
+          <li className="p-4 flex items-center justify-between">
+            <span>Профиль</span>
+            <img src="/images/ui/icon_edit.png" alt="edit" className="w-4 h-4 cursor-pointer" />
+          </li>
+          <li className="p-4 flex items-center justify-between">
+            <span>Настройки</span>
+            <img src="/images/ui/icon_delete.png" alt="delete" className="w-4 h-4 cursor-pointer" />
+          </li>
+          <li className="p-4 flex items-center justify-between">
+            <span>Поиск</span>
+            <img src="/images/ui/icon_search.png" alt="search" className="w-4 h-4 cursor-pointer" />
+          </li>
+        </ul>
+      </section>
+
+      {/* Пример использования иконки */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">Пример иконки в кнопке</h2>
+        <button className="px-4 py-2 bg-blue-500 text-white rounded inline-flex items-center space-x-2 hover:bg-blue-600">
+          <img src="/images/ui/icon_search.png" alt="search" className="w-4 h-4" />
+          <span>Найти</span>
+        </button>
+      </section>
     </div>
   );
 };
 
 export default Practice2;
+
+/** Вспомогательные компоненты */
+interface ColorBlockProps {
+  color: string;
+  name: string;
+}
+const ColorBlock: React.FC<ColorBlockProps> = ({ color, name }) => (
+  <div className="flex flex-col items-center text-sm">
+    <div
+      className="w-16 h-16 rounded border border-gray-200 mb-2"
+      style={{ backgroundColor: color }}
+    />
+    <p>{name}</p>
+    <p className="text-gray-500">{color}</p>
+  </div>
+);
+
+interface ToggleProps {
+  label: string;
+  defaultChecked?: boolean;
+}
+const Toggle: React.FC<ToggleProps> = ({ label, defaultChecked }) => {
+  const [checked, setChecked] = React.useState<boolean>(!!defaultChecked);
+
+  return (
+    <label className="inline-flex items-center cursor-pointer space-x-2">
+      <span className="text-sm font-semibold">{label}</span>
+      <div
+        className={`relative w-10 h-5 rounded-full transition ${
+          checked ? 'bg-blue-500' : 'bg-gray-300'
+        }`}
+        onClick={() => setChecked(!checked)}
+      >
+        <div
+          className={`absolute w-4 h-4 bg-white rounded-full top-0.5 transition ${
+            checked ? 'left-5' : 'left-1'
+          }`}
+        />
+      </div>
+    </label>
+  );
+};
